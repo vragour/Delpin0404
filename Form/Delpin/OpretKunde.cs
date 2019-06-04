@@ -12,6 +12,7 @@ namespace Delpin
 {
     public partial class OpretKunde : Form
     {
+
         public OpretKunde()
         {
             InitializeComponent();

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Backend;
 
 namespace Delpin
 {
     public partial class updateRes : Form
     {
+        
         public updateRes()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace Delpin
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+            
         }
 
         private void updateRes_Load(object sender, EventArgs e)
