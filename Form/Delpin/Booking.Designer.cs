@@ -66,6 +66,9 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mærke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -184,12 +187,17 @@
             // 
             // listView2
             // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Navn,
+            this.rnr,
+            this.Mærke});
             this.listView2.Location = new System.Drawing.Point(0, 21);
             this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(318, 234);
             this.listView2.TabIndex = 20;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.ListView2_SelectedIndexChanged);
             // 
             // textBox8
@@ -470,6 +478,18 @@
             this.label9.Text = "Start dato";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // Navn
+            // 
+            this.Navn.Text = "Navn";
+            // 
+            // rnr
+            // 
+            this.rnr.Text = "rnr";
+            // 
+            // Mærke
+            // 
+            this.Mærke.Text = "Mærke";
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -549,5 +569,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.ColumnHeader Navn;
+        private System.Windows.Forms.ColumnHeader rnr;
+        private System.Windows.Forms.ColumnHeader Mærke;
     }
 }

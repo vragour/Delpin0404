@@ -46,7 +46,9 @@ namespace Delpin
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            if (String.IsNullOrEmpty(textBox8.Text) || String.IsNullOrWhiteSpace(textBox8.Text))
+                return;
+            //DBController 
         }
 
         private void button2_Click_1(object sender, EventArgs e)
