@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Backend
 {
-    class Tilbehoer
+   public class Tilbehoer
     {
         //Daniel
         public void SletReservationTilbehoer() //delete

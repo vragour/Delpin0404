@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace Backend
 {
-    class DBManager
+    public class DBManager
     {
         private const string username = "user id = delpin1;";
         private const string server = "server = den1.mssql7.gear.host;";

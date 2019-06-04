@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace Backend
 {
-    class Debitor
+    public class Debitor
     {
         public void OpretKunde(string navn, string adresse, string postnr, string manr, string kundetype, string kundenr)
         {
