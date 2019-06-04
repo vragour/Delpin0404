@@ -52,8 +52,12 @@ namespace Delpin
             string startdate = Convert.ToString(dateTimePicker1.Value);
             string slutdate = Convert.ToString(dateTimePicker2.Value);
 
-            dBController.HentAllFrieRessourcer(startdate, slutdate);
-            //dBController.ressources;
+            //foreach (var item in dBController.HentAllFrieRessourcer(startdate, slutdate))
+            //{
+
+            //}
+            
+            
         }
 
         private void button2_Click_1(object sender, EventArgs e)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class Ressource
+    public class Ressource
     {
         private string _Navn;
         private int _Rnr;
