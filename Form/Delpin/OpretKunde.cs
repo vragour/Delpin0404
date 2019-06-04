@@ -21,14 +21,25 @@ namespace Delpin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dbc.InsertDebitor(textBox1.ToString(), 
-                textBox2.ToString(), 
-                int.Parse(textBox3.ToString()), 
-                textBox4.ToString(), 
-                textBox5.ToString(),
-                textBox6.ToString(),
-                textBox7.ToString(),
-                textBox8.ToString());
+            dbc.InsertDebitor(
+                textBox1.Text, 
+                textBox2.Text, 
+                int.Parse(textBox3.Text),
+                textBox4.Text, 
+                textBox5.Text,
+                textBox6.Text,
+                textBox7.Text,
+                textBox8.Text);
+
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+
         }
     }
 }
