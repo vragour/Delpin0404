@@ -31,7 +31,7 @@ namespace Backend
                 if (valg == "1")
                 {
                     Console.Clear();
-                    Debitor.OpretKunde();
+                    //Debitor.OpretKunde();
                     Console.ReadKey();
                 }
                 if (valg == "2")
