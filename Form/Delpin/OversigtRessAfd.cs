@@ -13,7 +13,6 @@ namespace Delpin
 {
     public partial class OversigtRessAfd : Form
     {
-        
         private DBController dbc = new DBController();
        
         public OversigtRessAfd()
