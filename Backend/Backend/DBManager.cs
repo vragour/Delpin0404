@@ -127,8 +127,11 @@ namespace Backend
             string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
-            SqlCommand comm = new SqlCommand(sqlCmdText,conn);//By initializing @param comm this way is has connection abilities
-            comm.Connection.Open();//Open the connection
+            /*Initalizing SqlCommand object comm with two paramerets: 
+             * @parm conn, gives comm connection abilities.
+             * @param sqlCmdText, QueryText to be executed at Database server.*/
+            SqlCommand comm = new SqlCommand(sqlCmdText,conn);
+            comm.Connection.Open();
 
             SqlDataReader reader = comm.ExecuteReader();
 
