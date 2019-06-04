@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.SqlClient;
 namespace Backend
 {
     class Debitor
@@ -19,7 +19,7 @@ namespace Backend
             string opretKunde = $"insert into v2_Debitor ( Navn, Adresse, Postnr, manr, Kundetype, Kundenr) " +
                 $"values ('{navn}', '{adresse}', '{postnr}', '{manr}', '{kundetype}', '{kundenr}')";
 
-            SqlCmd.CommandText = OpretKunde;
+            sqlCmd.CommandText = opretKunde;
 
             conn.Open();
             sqlCmd.ExecuteNonQuery();
