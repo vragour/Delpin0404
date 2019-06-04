@@ -79,6 +79,12 @@
     <Compile Include="OpretKunde.Designer.cs">
       <DependentUpon>OpretKunde.cs</DependentUpon>
     </Compile>
+    <Compile Include="OversigtRessAfd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OversigtRessAfd.Designer.cs">
+      <DependentUpon>OversigtRessAfd.cs</DependentUpon>
+    </Compile>
     <Compile Include="updateRes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OpretKunde.resx">
       <DependentUpon>OpretKunde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OversigtRessAfd.resx">
+      <DependentUpon>OversigtRessAfd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateRes.resx">
       <DependentUpon>updateRes.cs</DependentUpon>

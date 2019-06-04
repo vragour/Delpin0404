@@ -43,7 +43,7 @@ namespace Backend
 
                     List<AfdRessObj> listRessAfdObj = new List<AfdRessObj>();
 
-                    listRessAfdObj = dBManager.FindLedigeResourcerForAfdeling();
+                    listRessAfdObj = dBManager.HentLedigeResourcerForAfdeling();
 
                     foreach (AfdRessObj obj in listRessAfdObj)
                     {

@@ -121,7 +121,7 @@ namespace Backend
 
 
 
-        public List<AfdRessObj> FindLedigeResourcerForAfdeling()
+        public List<AfdRessObj> HentLedigeResourcerForAfdeling()
         {
             List<AfdRessObj> ressources = new List<AfdRessObj>();
             string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +

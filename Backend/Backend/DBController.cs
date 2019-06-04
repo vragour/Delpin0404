@@ -12,10 +12,18 @@ namespace Backend
 
         public List<Ressource> ressources = new List<Ressource>();
         public List<DebitorObj> debitor = new List<DebitorObj>();
+        public List<AfdRessObj> afdRessObjs = new List<AfdRessObj>();
 
         public void HentAllFrieRessourcer(string startdate, string slutdate)
         {
             ressources = connection.FindAlleFrieRessourcer(startdate, slutdate);
+        }
+
+        public void FindLedigeResourcerForAfdeling( )//USE CASE: U1 / U2
+        {
+            /*Populate the List with Database Elements and let the controller keep the list*/
+            afdRessObjs = connection.HentLedigeResourcerForAfdeling();
+            
         }
 
         public void ShowAllfrieRessourcer(string startdate, string slutdate)
