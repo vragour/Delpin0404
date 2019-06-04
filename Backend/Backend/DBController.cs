@@ -31,7 +31,7 @@ namespace Backend
         public void InsertDebitor(string navn, string adresse, int postNr, string by, string medarbejderNr, string kundeType, string tlf, string kundeNr)
         {
             DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, kundeType, tlf, kundeNr);
-            connection.
+            connection.InserDebitor(debitorObj);
         }
     }
 }
