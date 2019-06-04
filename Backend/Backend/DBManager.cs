@@ -55,12 +55,30 @@ namespace Backend
                 );
                 ressources.Add(r);
             }
-
             reader.Close();
             conn.Close();
             return ressources;
         }
 
+        public void InserDebitor(DebitorObj debitorObj)
+        {
+            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
+            $"values ('{debitorObj.Navn}'," +
+                   $" '{debitorObj.Adresse}'," +
+                   $" {debitorObj.PostNr}," +
+                   $" '{debitorObj.By}'," +
+                   $" {debitorObj.MedarbejderNr}," +
+                   $" '{debitorObj.KundeType}'," +
+                   $" {debitorObj.Tlf}," +
+                   $" '{debitorObj.KundeNr}')";
+            /*Initalizing SqlCommand object comm with two paramerets: 
+             * @parm conn, gives comm connection abilities.
+             * @param sqlCmdText, QueryText to be executed at Database server.*/
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
+            comm.Connection.Open();
+            comm.ExecuteNonQuery();
+            comm.Connection.Close();
+        }
 
         public void updateRessource(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
         {
@@ -86,17 +104,8 @@ namespace Backend
             conn.Close();
         }
 
-
-
-
-
-
-
         public void deleteReservering(int rnr)
         {
-
-
-
             conn.Open();
             SqlCommand com = new SqlCommand();
             com.Connection = conn;
@@ -108,34 +117,24 @@ namespace Backend
             com.CommandText = sql;
             com.ExecuteNonQuery();
             conn.Close();
-
         }
 
 
 
         public List<AfdRessObj> FindLedigeResourcerForAfdeling()
         {
-            conn.Open();
-
-            SqlCommand com = new SqlCommand();
-            com.Connection = conn;
-
-            string sql = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
+            List<AfdRessObj> ressources = new List<AfdRessObj>();
+            string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
+            SqlCommand comm = new SqlCommand(sqlCmdText,conn);//By initializing @param comm this way is has connection abilities
+            comm.Connection.Open();//Open the connection
 
-            com.CommandText = sql;
-
-            List<AfdRessObj> ressources = new List<AfdRessObj>();
-
-            SqlDataReader reader = com.ExecuteReader();
-
+            SqlDataReader reader = comm.ExecuteReader();
 
             while (reader.Read())
-
             {
                 ressources.Add(
-
                     new AfdRessObj(
                     Convert.ToString(reader["Navn"]),
                     Convert.ToInt32(reader["rnr"]),
@@ -143,14 +142,12 @@ namespace Backend
                     Convert.ToInt32(reader["Pris"]),
                     Convert.ToString(reader["Adresse"]),
                     Convert.ToInt16(reader["Postnr"])
-
-                                    )
-                                );
-
+                    ));
             }
 
             reader.Close();
-            conn.Close();
+            comm.Connection.Close();
+
             return ressources;
         }
     }
