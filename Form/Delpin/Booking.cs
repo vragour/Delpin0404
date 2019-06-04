@@ -48,7 +48,12 @@ namespace Delpin
         {
             if (String.IsNullOrEmpty(textBox8.Text) || String.IsNullOrWhiteSpace(textBox8.Text))
                 return;
-            //DBController 
+            DBController dBController = new DBController();
+            string startdate = Convert.ToString(dateTimePicker1.Value);
+            string slutdate = Convert.ToString(dateTimePicker2.Value);
+
+            dBController.HentAllFrieRessourcer(startdate, slutdate);
+            //dBController.ressources;
         }
 
         private void button2_Click_1(object sender, EventArgs e)

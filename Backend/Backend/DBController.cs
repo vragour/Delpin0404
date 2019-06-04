@@ -11,7 +11,7 @@ namespace Backend
         DBManager connection = new DBManager();
 
         List<Ressource> ressources = new List<Ressource>();
-
+        List<DebitorObj> debitor = new List<DebitorObj>();
         public void HentAllFrieRessourcer(string startdate, string slutdate)
         {
             ressources = connection.FindAlleFrieRessourcer(startdate, slutdate);
