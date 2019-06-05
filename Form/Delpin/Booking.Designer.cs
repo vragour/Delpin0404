@@ -43,6 +43,7 @@
             this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mærke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listView4 = new System.Windows.Forms.ListView();
             this.button5 = new System.Windows.Forms.Button();
@@ -69,7 +70,14 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Navn1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rnr1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.maerke1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.afdeling1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pris = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.startdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.slutdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.aargang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -215,6 +223,10 @@
             // 
             this.Mærke.Text = "Mærke";
             // 
+            // afdeling
+            // 
+            this.afdeling.Text = "afdeling";
+            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(0, 271);
@@ -226,12 +238,23 @@
             // 
             // listView4
             // 
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Navn1,
+            this.rnr1,
+            this.maerke1,
+            this.afdeling1,
+            this.pris,
+            this.aargang,
+            this.startdato,
+            this.slutdato});
             this.listView4.Location = new System.Drawing.Point(106, 470);
             this.listView4.Margin = new System.Windows.Forms.Padding(2);
             this.listView4.Name = "listView4";
             this.listView4.Size = new System.Drawing.Size(740, 318);
             this.listView4.TabIndex = 30;
             this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
+            this.listView4.SelectedIndexChanged += new System.EventHandler(this.ListView4_SelectedIndexChanged);
             // 
             // button5
             // 
@@ -242,6 +265,7 @@
             this.button5.TabIndex = 33;
             this.button5.Text = "Slet";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // button8
             // 
@@ -252,6 +276,7 @@
             this.button8.TabIndex = 34;
             this.button8.Text = "Book";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // button10
             // 
@@ -497,9 +522,48 @@
             this.label9.Text = "Start dato";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // afdeling
+            // Navn1
             // 
-            this.afdeling.Text = "afdeling";
+            this.Navn1.Text = "Navn";
+            this.Navn1.Width = 90;
+            // 
+            // rnr1
+            // 
+            this.rnr1.Text = "rnr";
+            this.rnr1.Width = 90;
+            // 
+            // maerke1
+            // 
+            this.maerke1.Text = "maerke";
+            this.maerke1.Width = 90;
+            // 
+            // afdeling1
+            // 
+            this.afdeling1.Text = "afdeling";
+            this.afdeling1.Width = 90;
+            // 
+            // pris
+            // 
+            this.pris.Text = "pris";
+            this.pris.Width = 90;
+            // 
+            // startdato
+            // 
+            this.startdato.DisplayIndex = 5;
+            this.startdato.Text = "startdato";
+            this.startdato.Width = 90;
+            // 
+            // slutdato
+            // 
+            this.slutdato.DisplayIndex = 6;
+            this.slutdato.Text = "slutdato";
+            this.slutdato.Width = 90;
+            // 
+            // aargang
+            // 
+            this.aargang.DisplayIndex = 7;
+            this.aargang.Text = "Årgang";
+            this.aargang.Width = 90;
             // 
             // Booking
             // 
@@ -584,5 +648,13 @@
         private System.Windows.Forms.ColumnHeader rnr;
         private System.Windows.Forms.ColumnHeader Mærke;
         private System.Windows.Forms.ColumnHeader afdeling;
+        private System.Windows.Forms.ColumnHeader Navn1;
+        private System.Windows.Forms.ColumnHeader rnr1;
+        private System.Windows.Forms.ColumnHeader maerke1;
+        private System.Windows.Forms.ColumnHeader afdeling1;
+        private System.Windows.Forms.ColumnHeader pris;
+        private System.Windows.Forms.ColumnHeader startdato;
+        private System.Windows.Forms.ColumnHeader slutdato;
+        private System.Windows.Forms.ColumnHeader aargang;
     }
 }

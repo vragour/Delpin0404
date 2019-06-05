@@ -206,5 +206,71 @@ namespace Backend
 
             return ressources;
         }
+
+        public List<Ressource> FindFrieRessourcerMaerkelNavn(string startdate, string slutdate, string search)
+        {
+
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+
+            string sql = "select * from v2_Ressourcer " +
+                "where not exists" +
+                    "(select '' from v2_Reservation_Line_Ressourcer " +
+                    "where '" + startdate + "' <= v2_Reservation_Line_Ressourcer.Orderslut " +
+                    "and '" + slutdate + "' >= v2_Reservation_Line_Ressourcer.OrderStart " +
+                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr) " +
+                    "and (v2_Ressourcer.Navn like '%" + search + "%' " +
+                    "or v2_Ressourcer.Maerke like '%" + search + "%') order by anr;";
+
+            com.CommandText = sql;
+            List<Ressource> ressources = new List<Ressource>();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                Ressource r = new Ressource(
+                    Convert.ToString(reader["Navn"]),
+                    Convert.ToInt32(reader["rnr"]),
+                    Convert.ToInt32(reader["Aargang"]),
+                    Convert.ToString(reader["Maerke"]),
+                    Convert.ToDouble(reader["Pris"]),
+                    Convert.ToInt32(reader["anr"])
+                );
+                ressources.Add(r);
+            }
+            reader.Close();
+            conn.Close();
+            return ressources;
+        }
+
+        public List<Ressource> HentRessourcerPaaRnr(string startdate, string slutdate, string rnr)
+        {
+
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+
+            string sql = "select * from v2_Ressourcer where rnr = " + rnr;
+
+
+            com.CommandText = sql;
+            List<Ressource> ressources = new List<Ressource>();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                Ressource r = new Ressource(
+                    Convert.ToString(reader["Navn"]),
+                    Convert.ToInt32(reader["rnr"]),
+                    Convert.ToInt32(reader["Aargang"]),
+                    Convert.ToString(reader["Maerke"]),
+                    Convert.ToDouble(reader["Pris"]),
+                    Convert.ToInt32(reader["anr"])
+                );
+                ressources.Add(r);
+            }
+            reader.Close();
+            conn.Close();
+            return ressources;
+        }
     }
 }
