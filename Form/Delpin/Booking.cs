@@ -51,7 +51,8 @@ namespace Delpin
             DBController dBController = new DBController();
             string startdate = Convert.ToString(dateTimePicker1.Value.Date.ToString("yyyy/MM/dd"));
             string slutdate = Convert.ToString(dateTimePicker2.Value.Date.ToString("yyyy/MM/dd"));
-            dBController.HentAllFrieRessourcer(startdate, slutdate);
+            string whereString = "and (v2_Ressourcer.Navn like '%" + textBox8.Text + "%' or v2_Ressourcer.Maerke like '%" + textBox8.Text + "%') order by anr";
+            dBController.HentAllFrieRessourcer(startdate, slutdate, whereString);
 
             //uncommen hvis man skal se string af dato
             //MessageBox.Show(startdate);

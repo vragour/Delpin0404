@@ -31,7 +31,7 @@ namespace Backend
                     "(select '' from v2_Reservation_Line_Ressourcer " +
                     "where '" + startdate + "' <= v2_Reservation_Line_Ressourcer.Orderslut " +
                     "and '" + slutdate + "' >= v2_Reservation_Line_Ressourcer.OrderStart " +
-                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr);";
+                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr) " + whereString +";";
 
             com.CommandText = sql;
 
