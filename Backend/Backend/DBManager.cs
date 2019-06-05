@@ -80,6 +80,32 @@ namespace Backend
             comm.Connection.Close();
         }
 
+        public DebitorObj FindDebitor(string debitorTlf) {
+            DebitorObj debitorObj = null;
+            string sqlCmdText = $"select * from v2_Debitor where Tlf ='{debitorTlf}'";
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
+
+            comm.Connection.Open();
+            SqlDataReader reader = comm.ExecuteReader();
+            while (reader.Read())
+            {
+              debitorObj = new DebitorObj(
+                        Convert.ToString(reader["Navn"]),
+                        Convert.ToString(reader["Adresse"]),
+                        Convert.ToInt32(reader["Postnr"]),
+                        Convert.ToString(reader["By"]),
+                        Convert.ToString(reader["dnr"]),
+                        Convert.ToString(reader["Kundetype"]),
+                        Convert.ToString(reader["TLF"]),
+                        Convert.ToString(reader["Kundenr"])
+                    );
+                break;
+            }
+            reader.Close();
+            comm.Connection.Close();
+            return debitorObj;
+        }
+
         public void updateRessource(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
         {
             conn.Open();
@@ -118,8 +144,6 @@ namespace Backend
             com.ExecuteNonQuery();
             conn.Close();
         }
-
-
 
         public List<AfdRessObj> HentLedigeResourcerForAfdeling()
         {

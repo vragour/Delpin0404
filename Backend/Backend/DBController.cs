@@ -23,7 +23,6 @@ namespace Backend
         {
             /*Populate the List with Database Elements and let the controller keep the list*/
             afdRessObjs = connection.HentLedigeResourcerForAfdeling();
-            
         }
 
         public void ShowAllfrieRessourcer(string startdate, string slutdate)
@@ -41,6 +40,15 @@ namespace Backend
         {
             DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, kundeType, tlf, kundeNr);
             connection.InserDebitor(debitorObj);
+        }
+
+        public void HentDebitor(string debitorTlf)
+        {
+            DebitorObj debitor = connection.FindDebitor(debitorTlf);
+            if(debitor == null)
+                Console.WriteLine("debitor is null");
+            else
+                Console.WriteLine(debitor.Adresse+"\t"+debitor.By);
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Backend;
 
@@ -39,7 +32,6 @@ namespace Delpin
             textBox6.Clear();
             textBox7.Clear();
             textBox8.Clear();
-
         }
     }
 }
