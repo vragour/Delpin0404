@@ -10,11 +10,6 @@ namespace Backend
     {
         static void Main(string[] args)
         {
-
-            DBController controller = new DBController();
-
-            controller.HentDebitor("753159");
-            /*
              Console.WriteLine("Velkommen, tryk enter for at fortsætte...");
 
             Console.ReadKey();
@@ -94,7 +89,7 @@ namespace Backend
 
 
             Console.ReadKey();
-             */
+             
 
 
         }

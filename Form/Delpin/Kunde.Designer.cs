@@ -87,6 +87,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(183, 282);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(149, 25);
             this.textBox5.TabIndex = 67;
             // 
@@ -195,7 +196,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(331, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 30);
+            this.button1.Size = new System.Drawing.Size(60, 30);
             this.button1.TabIndex = 54;
             this.button1.Text = "Opret Kunde";
             this.button1.UseVisualStyleBackColor = true;
@@ -241,6 +242,7 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "Søg";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button5
             // 
@@ -256,12 +258,13 @@
             // listView1
             // 
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.listView1.Location = new System.Drawing.Point(439, 12);
+            this.listView1.Location = new System.Drawing.Point(396, 12);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(558, 666);
+            this.listView1.Size = new System.Drawing.Size(692, 666);
             this.listView1.TabIndex = 51;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // textBox7
             // 
@@ -281,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(1099, 723);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button4);
