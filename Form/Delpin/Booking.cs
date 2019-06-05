@@ -52,10 +52,16 @@ namespace Delpin
             string startdate = Convert.ToString(dateTimePicker1.Value);
             string slutdate = Convert.ToString(dateTimePicker2.Value);
 
-            //foreach (var item in dBController.HentAllFrieRessourcer(startdate, slutdate))
-            //{
+        foreach (var item in dBController.ressources)
+	        {
+                ListViewItem itm = new ListViewItem();
+                itm.SubItems.Add(item.Navn);
+                itm.SubItems.Add(Convert.ToString(item.Rnr));
+                itm.SubItems.Add(item.Maerke);
+                // til føj til ressourcerlisten
+                listView2.Items.Add(itm);
 
-            //}
+	        }
             
             
         }
