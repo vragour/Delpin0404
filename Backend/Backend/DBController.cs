@@ -50,5 +50,15 @@ namespace Backend
             else
                 Console.WriteLine(debitor.Adresse+"\t"+debitor.By);
         }
+
+        public void FindFrieRessourcerMaerkelNavn(string startdate, string slutdate, string search)
+        {
+            ressources = connection.FindFrieRessourcerMaerkelNavn(startdate, slutdate, search);
+        }
+
+        public void HentRessourcerPaaRr(string startdate, string slutdate, string rnr)
+        {
+            ressources = connection.HentRessourcerPaaRnr(startdate, slutdate, rnr);
+        }
     }
 }

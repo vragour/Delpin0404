@@ -43,6 +43,7 @@
             this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mærke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listView4 = new System.Windows.Forms.ListView();
             this.button5 = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -215,6 +215,10 @@
             // 
             this.Mærke.Text = "Mærke";
             // 
+            // afdeling
+            // 
+            this.afdeling.Text = "afdeling";
+            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(0, 271);
@@ -232,6 +236,7 @@
             this.listView4.Size = new System.Drawing.Size(740, 318);
             this.listView4.TabIndex = 30;
             this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.SelectedIndexChanged += new System.EventHandler(this.ListView4_SelectedIndexChanged);
             // 
             // button5
             // 
@@ -496,10 +501,6 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Start dato";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // afdeling
-            // 
-            this.afdeling.Text = "afdeling";
             // 
             // Booking
             // 

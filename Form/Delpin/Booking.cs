@@ -51,8 +51,8 @@ namespace Delpin
             DBController dBController = new DBController();
             string startdate = Convert.ToString(dateTimePicker1.Value.Date.ToString("yyyy/MM/dd"));
             string slutdate = Convert.ToString(dateTimePicker2.Value.Date.ToString("yyyy/MM/dd"));
-            string whereString = "and (v2_Ressourcer.Navn like '%" + textBox8.Text + "%' or v2_Ressourcer.Maerke like '%" + textBox8.Text + "%') order by anr";
-            dBController.HentAllFrieRessourcer(startdate, slutdate, whereString);
+            string search = textBox8.Text;
+            dBController.HentAllFrieRessourcer(startdate, slutdate, search);
 
             //uncommen hvis man skal se string af dato
             //MessageBox.Show(startdate);
@@ -73,7 +73,11 @@ namespace Delpin
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            var selectedItem = listView2.SelectedItems[0].SubItems[1].Text;
+            DBController dBController = new DBController();
+            string whereString = " and rnr = '" + selectedItem + "'";
+            //listView4.Items.Add
+            
         }
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
@@ -134,6 +138,11 @@ namespace Delpin
         private void ListView2_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void ListView4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
