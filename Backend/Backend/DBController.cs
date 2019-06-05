@@ -69,6 +69,5 @@ namespace Backend
             ressources = connection.HentRessourcerPaaRnr(startdate, slutdate, rnr);
         }
 
-
     }
 }
