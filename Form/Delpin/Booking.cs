@@ -49,15 +49,26 @@ namespace Delpin
             if (String.IsNullOrEmpty(textBox8.Text) || String.IsNullOrWhiteSpace(textBox8.Text))
                 return;
             DBController dBController = new DBController();
-            string startdate = Convert.ToString(dateTimePicker1.Value);
-            string slutdate = Convert.ToString(dateTimePicker2.Value);
+            string startdate = Convert.ToString(dateTimePicker1.Value.Date.ToString("yyyy/MM/dd"));
+            string slutdate = Convert.ToString(dateTimePicker2.Value.Date.ToString("yyyy/MM/dd"));
+            string whereString = "and (v2_Ressourcer.Navn like '%" + textBox8.Text + "%' or v2_Ressourcer.Maerke like '%" + textBox8.Text + "%') order by anr";
+            dBController.HentAllFrieRessourcer(startdate, slutdate, whereString);
 
-            //foreach (var item in dBController.HentAllFrieRessourcer(startdate, slutdate))
-            //{
+            //uncommen hvis man skal se string af dato
+            //MessageBox.Show(startdate);
+            //MessageBox.Show(slutdate);
+            foreach (var item in dBController.ressources)
+            {
+                ListViewItem itm = new ListViewItem(item.Navn, 0);
+                itm.SubItems.Add(Convert.ToString(item.Rnr));
+                itm.SubItems.Add(item.Maerke);
+                itm.SubItems.Add(Convert.ToString(item.Anr));
+                // til føj til ressourcerlisten
+                listView2.Items.Add(itm);
 
-            //}
-            
-            
+            }
+
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -95,11 +106,11 @@ namespace Delpin
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            if(dateTimePicker2.Value <= dateTimePicker1.Value)
+            if(dateTimePicker2.Value < dateTimePicker1.Value)
             {
                 string beforeStart = "Slutdatoen skal være efter den valgte startdato";
                 MessageBox.Show(beforeStart);
-                dateTimePicker2.Value = DateTime.Now;
+                dateTimePicker2.Value = dateTimePicker1.Value;
             }
 
 

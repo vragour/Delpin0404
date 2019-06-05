@@ -40,6 +40,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mærke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listView4 = new System.Windows.Forms.ListView();
             this.button5 = new System.Windows.Forms.Button();
@@ -66,9 +69,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Mærke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -190,15 +191,29 @@
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Navn,
             this.rnr,
-            this.Mærke});
-            this.listView2.Location = new System.Drawing.Point(0, 21);
+            this.Mærke,
+            this.afdeling});
+            this.listView2.Location = new System.Drawing.Point(0, 19);
             this.listView2.Margin = new System.Windows.Forms.Padding(2);
+            this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(318, 234);
+            this.listView2.Size = new System.Drawing.Size(318, 236);
             this.listView2.TabIndex = 20;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.ListView2_SelectedIndexChanged);
+            // 
+            // Navn
+            // 
+            this.Navn.Text = "Navn";
+            // 
+            // rnr
+            // 
+            this.rnr.Text = "rnr";
+            // 
+            // Mærke
+            // 
+            this.Mærke.Text = "Mærke";
             // 
             // textBox8
             // 
@@ -450,6 +465,8 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CustomFormat = "yyyy/MM/dd";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(932, 29);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
@@ -459,6 +476,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "yyyy/MM/dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(649, 29);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -478,17 +497,9 @@
             this.label9.Text = "Start dato";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // Navn
+            // afdeling
             // 
-            this.Navn.Text = "Navn";
-            // 
-            // rnr
-            // 
-            this.rnr.Text = "rnr";
-            // 
-            // Mærke
-            // 
-            this.Mærke.Text = "Mærke";
+            this.afdeling.Text = "afdeling";
             // 
             // Booking
             // 
@@ -572,5 +583,6 @@
         private System.Windows.Forms.ColumnHeader Navn;
         private System.Windows.Forms.ColumnHeader rnr;
         private System.Windows.Forms.ColumnHeader Mærke;
+        private System.Windows.Forms.ColumnHeader afdeling;
     }
 }

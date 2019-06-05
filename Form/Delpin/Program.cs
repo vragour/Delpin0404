@@ -16,7 +16,7 @@ namespace Delpin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OversigtRessAfd());
+            Application.Run(new Delpin());
         }
     }
 }

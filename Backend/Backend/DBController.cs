@@ -14,9 +14,9 @@ namespace Backend
         public List<DebitorObj> debitor = new List<DebitorObj>();
         public List<AfdRessObj> afdRessObjs = new List<AfdRessObj>();
 
-        public void HentAllFrieRessourcer(string startdate, string slutdate)
+        public void HentAllFrieRessourcer(string startdate, string slutdate, string whereString = null)
         {
-            ressources = connection.FindAlleFrieRessourcer(startdate, slutdate);
+            ressources = connection.FindAlleFrieRessourcer(startdate, slutdate, whereString);
         }
 
         public void FindLedigeResourcerForAfdeling( )//USE CASE: U1 / U2
