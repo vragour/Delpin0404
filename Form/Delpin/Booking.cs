@@ -52,7 +52,7 @@ namespace Delpin
             string startdate = Convert.ToString(dateTimePicker1.Value.Date.ToString("yyyy/MM/dd"));
             string slutdate = Convert.ToString(dateTimePicker2.Value.Date.ToString("yyyy/MM/dd"));
             string search = textBox8.Text;
-            dBController.HentAllFrieRessourcer(startdate, slutdate, search);
+            dBController.FindFrieRessourcerMaerkelNavn(startdate, slutdate, search);
 
             //uncommen hvis man skal se string af dato
             //MessageBox.Show(startdate);
@@ -63,6 +63,8 @@ namespace Delpin
                 itm.SubItems.Add(Convert.ToString(item.Rnr));
                 itm.SubItems.Add(item.Maerke);
                 itm.SubItems.Add(Convert.ToString(item.Anr));
+                itm.SubItems.Add(Convert.ToString(item.Pris));
+                itm.SubItems.Add(Convert.ToString(item.Aargang));
                 // til føj til ressourcerlisten
                 listView2.Items.Add(itm);
 
@@ -73,9 +75,15 @@ namespace Delpin
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var selectedItem = listView2.SelectedItems[0].SubItems[1].Text;
-            DBController dBController = new DBController();
-            string whereString = " and rnr = '" + selectedItem + "'";
+            var selectedItem = listView2.SelectedItems[0];
+            ListViewItem listViewItem = new ListViewItem();
+            listViewItem = selectedItem;
+            listViewItem.SubItems.Add(Convert.ToString(dateTimePicker1.Value.Date.ToString("yyyy/MM/dd")));
+            listViewItem.SubItems.Add(Convert.ToString(dateTimePicker2.Value.Date.ToString("yyyy/MM/dd")));
+            listView2.SelectedItems[0].Remove();
+            listView4.Items.Add(listViewItem);
+
+
             //listView4.Items.Add
             
         }
@@ -142,6 +150,23 @@ namespace Delpin
 
         private void ListView4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        // sletning fra booking
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            var selectedItem = listView4.SelectedItems[0];
+            ListViewItem listViewItem = new ListViewItem();
+            listViewItem = selectedItem;
+            listView4.SelectedItems[0].Remove();
+            listView2.Items.Add(listViewItem);
 
         }
     }
