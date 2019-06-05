@@ -47,17 +47,5 @@ namespace Backend
             DebitorObj debitor = connection.FindDebitor(debitorTlf);
             return debitor;
         }
-
-        public void UpdatetDebitor(string navn, string adresse, int postNr, string by, string medarbejderNr, string kundeType, string tlf, string kundeNr)
-        {
-            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, kundeType, tlf, kundeNr);
-            connection.UpdateDebitor(debitorObj);
-        }
-
-        public void DeleteDebitor(string debitorTlf)
-        {
-             connection.DeleteDebitor(debitorTlf);
-        }
-
     }
 }
