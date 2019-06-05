@@ -42,6 +42,17 @@ namespace Backend
             connection.InserDebitor(debitorObj);
         }
 
+        public void UpdatetDebitor(string navn, string adresse, int postNr, string by, string medarbejderNr, string kundeType, string tlf, string kundeNr)
+        {
+            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, kundeType, tlf, kundeNr);
+            connection.UpdateDebitor(debitorObj);
+        }
+
+        public void DeleteDebitor(string debitorTlf)
+        {
+            connection.DeleteDebitor(debitorTlf);
+        }
+
         public DebitorObj HentDebitor(string debitorTlf)
         {
             DebitorObj debitor = connection.FindDebitor(debitorTlf);
@@ -57,5 +68,7 @@ namespace Backend
         {
             ressources = connection.HentRessourcerPaaRnr(startdate, slutdate, rnr);
         }
+
+
     }
 }
