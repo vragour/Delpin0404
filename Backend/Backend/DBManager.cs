@@ -31,7 +31,7 @@ namespace Backend
                     "(select '' from v2_Reservation_Line_Ressourcer " +
                     "where '" + startdate + "' <= v2_Reservation_Line_Ressourcer.Orderslut " +
                     "and '" + slutdate + "' >= v2_Reservation_Line_Ressourcer.OrderStart " +
-                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr) " + whereString +";";
+                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr) " + whereString + ";";
 
             com.CommandText = sql;
 
@@ -62,12 +62,11 @@ namespace Backend
 
         public void InserDebitor(DebitorObj debitorObj)
         {
-            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
+            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], Kundetype, TLF, Kundenr) " +
             $"values ('{debitorObj.Navn}'," +
                    $" '{debitorObj.Adresse}'," +
                    $" {debitorObj.PostNr}," +
                    $" '{debitorObj.By}'," +
-                   $" '{debitorObj.MedarbejderNr}'," +
                    $" '{debitorObj.KundeType}'," +
                    $" {debitorObj.Tlf}," +
                    $" '{debitorObj.KundeNr}')";
@@ -95,18 +94,17 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             SqlDataReader reader = comm.ExecuteReader();
             while (reader.Read())
             {
-              debitorObj = new DebitorObj(
-                        Convert.ToString(reader["Navn"]),
-                        Convert.ToString(reader["Adresse"]),
-                        Convert.ToInt32(reader["Postnr"]),
-                        Convert.ToString(reader["By"]),
-                        Convert.ToString(reader["manr"]),
-                        Convert.ToString(reader["dnr"]),
-                        Convert.ToString(reader["Kundetype"]),
-                        Convert.ToString(reader["TLF"]),
-                        Convert.ToString(reader["Kundenr"])
-                    );
-                break;
+                debitorObj = new DebitorObj(
+                          Convert.ToString(reader["Navn"]),
+                          Convert.ToString(reader["Adresse"]),
+                          Convert.ToInt32(reader["Postnr"]),
+                          Convert.ToString(reader["By"]),
+                          Convert.ToString(reader["dnr"]),
+                          Convert.ToString(reader["Kundetype"]),
+                          Convert.ToString(reader["TLF"]),
+                          Convert.ToString(reader["Kundenr"])
+                      );
+                break;//Dibitors can have the same phonenumber, don't know why.
             }
             reader.Close();
             comm.Connection.Close();
@@ -120,7 +118,6 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
                 $"Adresse='{debitorObj.Adresse}'," +
                 $"PostNr={debitorObj.PostNr}, " +
                 $"[By]='{debitorObj.By}', " +
-                $"='{debitorObj.MedarbejderNr}', " +
                 $"KundeType='{debitorObj.KundeType}', " +
                 $"TLf='{debitorObj.Tlf}', " +
                 $"Kundenr='{debitorObj.KundeNr}'" +
@@ -187,8 +184,8 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
-            
-            SqlCommand comm = new SqlCommand(sqlCmdText,conn);
+
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
             comm.Connection.Open();
 
             SqlDataReader reader = comm.ExecuteReader();
@@ -305,6 +302,25 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             com.CommandText = sql;
             com.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public List<Booking> hentsidsteBooking(){
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            string sql = "SELECT TOP 1 * FROM debitor ORDER BY ID DESC";
+            com.CommandText = sql;
+            List<Booking> booking = new List<Booking>();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read()) {
+
+                Booking b = new Booking(Convert.ToInt32(reader["dnr"]), Convert.ToInt32(reader["Booking_ID"]));
+                booking.Add(b);
+            }
+
+            reader.Close();
+            conn.Close();
+            return booking;
         }
     }
 }

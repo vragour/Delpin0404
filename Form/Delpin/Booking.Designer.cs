@@ -224,8 +224,8 @@
             // listView4
             // 
             this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Navn1,
             this.rnr1,
+            this.Navn1,
             this.maerke1,
             this.afdeling1,
             this.pris,

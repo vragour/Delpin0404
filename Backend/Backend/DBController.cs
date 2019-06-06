@@ -81,5 +81,11 @@ namespace Backend
             connection.insertReserveringsline(orderstart, orderslut, pris, rnr, bookid);
         }
 
+        public void hentsidsteBooking()
+        {
+            //henter sidste række i booking og ikke booking + reserveringlinjer
+           bookings = connection.hentsidsteBooking();
+        }
+
     }
 }

@@ -59,7 +59,7 @@ namespace Delpin
             //MessageBox.Show(slutdate);
             foreach (var item in dBController.ressources)
             {
-                ListViewItem itm = new ListViewItem(Convert.ToString(item.Rnr, 0));
+                ListViewItem itm = new ListViewItem(Convert.ToString(item.Rnr), 0);
                 itm.SubItems.Add(item.Navn);
                 itm.SubItems.Add(item.Maerke);
                 itm.SubItems.Add(Convert.ToString(item.Anr));
@@ -155,16 +155,35 @@ namespace Delpin
 
         private void Button8_Click(object sender, EventArgs e)
         {
+            if(label19.Text == "tom")
+            {
+                MessageBox.Show("hent kunde først");
+                return;
+            }
             DBController controller = new DBController();
-            controller.insertBooking(Convert.ToInt32(label9.Text));
+            controller.insertBooking(Convert.ToInt32(label19.Text));
             //hent booking id
-
             //
 
-            foreach (var item in listView4.Items)
+            int bookingId;
+            controller.hentsidsteBooking();
+
+                bookingId = Convert.ToInt32(controller.bookings[0].book_ID);
+
+            
+
+            foreach (ListViewItem item in listView4.Items)
             {
-                //
+                controller.insertReserveringsline(
+                    item.SubItems[5].Text.ToString(), 
+                    item.SubItems[6].Text.ToString(), 
+                    Convert.ToDouble(item.SubItems[4].Text), 
+                    Convert.ToInt32(item.SubItems[1].Text), 
+                    Convert.ToInt32(bookingId));
+                
             }
+
+
         }
 
 
@@ -205,7 +224,7 @@ namespace Delpin
                     label17.Text = item.Tlf;
 
                     //mangler dnr;
-                    //label19.Text = item.
+                    //label19.Text = item
                 }
             }
             else
