@@ -15,7 +15,7 @@ namespace Backend
         public List<AfdRessObj> afdRessObjs = new List<AfdRessObj>();
         public List<Booking> bookings = new List<Booking>();
         public List<resserversline> resline = new List<resserversline>();
-
+        public List<TilbehoerObj> tilbehoer = new List<TilbehoerObj>();
         public void HentAllFrieRessourcer(string startdate, string slutdate, string whereString = null)
         {
             ressources = connection.FindAlleFrieRessourcer(startdate, slutdate, whereString);
@@ -66,6 +66,7 @@ namespace Backend
             ressources = connection.FindFrieRessourcerMaerkelNavn(startdate, slutdate, search);
         }
 
+
         public void HentRessourcerPaaRr(string startdate, string slutdate, string rnr)
         {
             ressources = connection.HentRessourcerPaaRnr(startdate, slutdate, rnr);
@@ -85,6 +86,11 @@ namespace Backend
         {
             //henter sidste række i booking og ikke booking + reserveringlinjer
            bookings = connection.hentsidsteBooking();
+        }
+
+        public void FindFrietilbehoerMaerkelNavn(string startdate, string slutdate, string search)
+        {
+            tilbehoer = connection.FindFrietilbehoerMaerkelNavn(startdate, slutdate, search);
         }
 
     }

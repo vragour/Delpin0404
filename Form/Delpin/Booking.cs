@@ -168,7 +168,7 @@ namespace Delpin
             int bookingId;
             controller.hentsidsteBooking();
 
-                bookingId = Convert.ToInt32(controller.bookings[0].book_ID);
+            bookingId = Convert.ToInt32(controller.bookings[0].book_ID);
 
             
 
@@ -279,6 +279,58 @@ namespace Delpin
         }
 
         private void Label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox2.Text) || String.IsNullOrWhiteSpace(textBox2.Text))
+                return;
+            DBController dBController = new DBController();
+            string startdate = Convert.ToString(dateTimePicker1.Value.Date.ToString("yyyy/MM/dd"));
+            string slutdate = Convert.ToString(dateTimePicker2.Value.Date.ToString("yyyy/MM/dd"));
+            string search = textBox2.Text;
+            dBController.FindFrietilbehoerMaerkelNavn(startdate, slutdate, search);
+            foreach (var item in dBController.tilbehoer)
+            {
+                ListViewItem itm = new ListViewItem(Convert.ToString(item.tnr), 0);
+                itm.SubItems.Add(item.navn);
+                itm.SubItems.Add(item.maerke);
+                itm.SubItems.Add(Convert.ToString(item.anr));
+                itm.SubItems.Add(Convert.ToString(item.pris));
+                itm.SubItems.Add(Convert.ToString(item.aargang));
+                // til føj til ressourcerlisten
+                listView2.Items.Add(itm);
+
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            var selectedItem = listView3.SelectedItems[0];
+            ListViewItem listViewItem = new ListViewItem();
+            listViewItem = selectedItem;
+            listViewItem.SubItems.Add(Convert.ToString(dateTimePicker1.Value.Date.ToString("yyyy/MM/dd")));
+            listViewItem.SubItems.Add(Convert.ToString(dateTimePicker2.Value.Date.ToString("yyyy/MM/dd")));
+            listView3.SelectedItems[0].Remove();
+            listView1.Items.Add(listViewItem);
+
+
+            //listView4.Items.Add
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
