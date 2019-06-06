@@ -13,7 +13,8 @@ namespace Backend
         public List<Ressource> ressources = new List<Ressource>();
         public List<DebitorObj> debitor = new List<DebitorObj>();
         public List<AfdRessObj> afdRessObjs = new List<AfdRessObj>();
-        public List<Booking>
+        public List<Booking> bookings = new List<Booking>();
+        public List<resserversline> resline = new List<resserversline>();
 
         public void HentAllFrieRessourcer(string startdate, string slutdate, string whereString = null)
         {
@@ -70,7 +71,7 @@ namespace Backend
             ressources = connection.HentRessourcerPaaRnr(startdate, slutdate, rnr);
         }
 
-        public void
+
 
 
     }

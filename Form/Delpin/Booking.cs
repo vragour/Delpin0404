@@ -183,8 +183,8 @@ namespace Delpin
                     label13.Text = item.Navn;
                     label12.Text = item.Adresse;
                     label11.Text = item.By;
-                    Label8.Text = item.PostNr;
-                    lab
+                    label8.Text = item.PostNr.ToString();
+
                     if (item.KundeType == "F")
                     {
                         label15.Text = item.KundeNr;
@@ -194,7 +194,9 @@ namespace Delpin
                         label7.Text = item.KundeNr;
                     }
                     label17.Text = item.Tlf;
-                    label19.Text = item.
+
+                    //mangler dnr;
+                    //label19.Text = item.
                 }
             }
             else
