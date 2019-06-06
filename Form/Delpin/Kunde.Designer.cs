@@ -152,9 +152,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(15, 287);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 20);
+            this.label5.Size = new System.Drawing.Size(121, 20);
             this.label5.TabIndex = 59;
-            this.label5.Text = "Medarbejdsnummer";
+            this.label5.Text = "DebitorNummer";
             // 
             // label4
             // 

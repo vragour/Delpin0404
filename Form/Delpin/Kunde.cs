@@ -26,7 +26,7 @@ namespace Delpin
             listView1.Columns.Add("Adresse", 60);
             listView1.Columns.Add("PostNr", 60);
             listView1.Columns.Add("By", 60);
-            listView1.Columns.Add("MedarbejderNr", 60);
+            listView1.Columns.Add("DebitorNr", 60);
             listView1.Columns.Add("KundeType", 60);
             listView1.Columns.Add("TLF", 60);
             listView1.Columns.Add("KundeNr", 60);
@@ -119,7 +119,7 @@ namespace Delpin
                 arr[1] = debitorObj.Adresse;
                 arr[2] = debitorObj.PostNr.ToString();
                 arr[3] = debitorObj.By;
-                arr[4] = debitorObj.MedarbejderNr;
+                arr[4] = debitorObj.DebitorNr;
                 arr[5] = debitorObj.KundeType;
                 arr[6] = debitorObj.Tlf;
                 arr[7] = debitorObj.KundeNr;

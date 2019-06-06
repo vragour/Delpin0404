@@ -14,18 +14,28 @@ namespace Backend
         private string adresse;
         private int postNr;
         private string by;
-        private string medarbejderNr;
+        private string debitorNr;
         private string kundeType;
         private string tlf;
         private string kundeNr;
 
-        public DebitorObj(string navn, string adresse, int postNr, string by, string medarbejderNr, string kundeType, string tlf, string kundeNr)
+        public DebitorObj(string navn, string adresse, int postNr, string by, string debitorNr, string kundeType, string tlf, string kundeNr)
         {
             this.navn = navn;
             this.adresse = adresse;
             this.postNr = postNr;
             this.by = by;
-            this.medarbejderNr = medarbejderNr;
+            this.debitorNr = debitorNr;
+            this.kundeType = kundeType;
+            this.tlf = tlf;
+            this.kundeNr = kundeNr;
+        }
+        public DebitorObj(string navn, string adresse, int postNr, string by, string kundeType, string tlf, string kundeNr)
+        {
+            this.navn = navn;
+            this.adresse = adresse;
+            this.postNr = postNr;
+            this.by = by;
             this.kundeType = kundeType;
             this.tlf = tlf;
             this.kundeNr = kundeNr;
@@ -51,9 +61,9 @@ namespace Backend
             get { return by; }
         }
 
-        public string MedarbejderNr
+        public string DebitorNr
         {
-            get { return medarbejderNr; }
+            get { return debitorNr; }
         }
 
         public string KundeType

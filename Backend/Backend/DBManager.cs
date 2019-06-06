@@ -62,12 +62,11 @@ namespace Backend
 
         public void InserDebitor(DebitorObj debitorObj)
         {
-            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
+            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], Kundetype, TLF, Kundenr) " +
             $"values ('{debitorObj.Navn}'," +
                    $" '{debitorObj.Adresse}'," +
                    $" {debitorObj.PostNr}," +
                    $" '{debitorObj.By}'," +
-                   $" {debitorObj.MedarbejderNr}," +
                    $" '{debitorObj.KundeType}'," +
                    $" {debitorObj.Tlf}," +
                    $" '{debitorObj.KundeNr}')";
@@ -79,6 +78,8 @@ namespace Backend
             comm.ExecuteNonQuery();
             comm.Connection.Close();
         }
+        /*insert into v2_Debitor(Navn, Adresse, PostNr, [By], KundeType, TLF, Kundenr)
+values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
 
         public DebitorObj FindDebitor(string debitorTlf)
         {
