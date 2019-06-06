@@ -31,7 +31,7 @@ namespace Backend
                     "(select '' from v2_Reservation_Line_Ressourcer " +
                     "where '" + startdate + "' <= v2_Reservation_Line_Ressourcer.Orderslut " +
                     "and '" + slutdate + "' >= v2_Reservation_Line_Ressourcer.OrderStart " +
-                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr) " + whereString +";";
+                    "and v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr) " + whereString + ";";
 
             com.CommandText = sql;
 
@@ -93,16 +93,16 @@ namespace Backend
             SqlDataReader reader = comm.ExecuteReader();
             while (reader.Read())
             {
-              debitorObj = new DebitorObj(
-                        Convert.ToString(reader["Navn"]),
-                        Convert.ToString(reader["Adresse"]),
-                        Convert.ToInt32(reader["Postnr"]),
-                        Convert.ToString(reader["By"]),
-                        Convert.ToString(reader["dnr"]),
-                        Convert.ToString(reader["Kundetype"]),
-                        Convert.ToString(reader["TLF"]),
-                        Convert.ToString(reader["Kundenr"])
-                    );
+                debitorObj = new DebitorObj(
+                          Convert.ToString(reader["Navn"]),
+                          Convert.ToString(reader["Adresse"]),
+                          Convert.ToInt32(reader["Postnr"]),
+                          Convert.ToString(reader["By"]),
+                          Convert.ToString(reader["dnr"]),
+                          Convert.ToString(reader["Kundetype"]),
+                          Convert.ToString(reader["TLF"]),
+                          Convert.ToString(reader["Kundenr"])
+                      );
                 break;//Dibitors can have the same phonenumber, don't know why.
             }
             reader.Close();
@@ -183,8 +183,8 @@ namespace Backend
             string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
-            
-            SqlCommand comm = new SqlCommand(sqlCmdText,conn);
+
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
             comm.Connection.Open();
 
             SqlDataReader reader = comm.ExecuteReader();
@@ -301,6 +301,25 @@ namespace Backend
             com.CommandText = sql;
             com.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public List<Booking> hentsidsteBooking(){
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            string sql = "SELECT TOP 1 * FROM debitor ORDER BY ID DESC";
+            com.CommandText = sql;
+            List<Booking> booking = new List<Booking>();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read()) {
+
+                Booking b = new Booking(Convert.ToInt32(reader["dnr"]), Convert.ToInt32(reader["Booking_ID"]));
+                booking.Add(b);
+            }
+
+            reader.Close();
+            conn.Close();
+            return booking;
         }
     }
 }
