@@ -36,27 +36,36 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mærke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.afdeling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listView4 = new System.Windows.Forms.ListView();
+            this.rnr1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Navn1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.maerke1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.afdeling1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pris = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.aargang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.startdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.slutdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.listView3 = new System.Windows.Forms.ListView();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,18 +77,19 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.Navn1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rnr1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.maerke1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.afdeling1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pris = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.startdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.slutdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.aargang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.rnrt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Navnt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Maerket = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.afdelingt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -168,17 +178,6 @@
             this.label6.Text = "CPR";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(216, 275);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(87, 19);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "Udbringing";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -196,13 +195,13 @@
             this.listView2.View = System.Windows.Forms.View.Details;
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.ListView2_SelectedIndexChanged);
             // 
-            // Navn
-            // 
-            this.Navn.Text = "Navn";
-            // 
             // rnr
             // 
             this.rnr.Text = "rnr";
+            // 
+            // Navn
+            // 
+            this.Navn.Text = "Navn";
             // 
             // Mærke
             // 
@@ -232,14 +231,57 @@
             this.aargang,
             this.startdato,
             this.slutdato});
-            this.listView4.Location = new System.Drawing.Point(106, 470);
+            this.listView4.Location = new System.Drawing.Point(107, 451);
             this.listView4.Margin = new System.Windows.Forms.Padding(2);
             this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(740, 318);
+            this.listView4.Size = new System.Drawing.Size(740, 166);
             this.listView4.TabIndex = 30;
             this.listView4.UseCompatibleStateImageBehavior = false;
             this.listView4.View = System.Windows.Forms.View.Details;
             this.listView4.SelectedIndexChanged += new System.EventHandler(this.ListView4_SelectedIndexChanged);
+            // 
+            // rnr1
+            // 
+            this.rnr1.Text = "rnr";
+            this.rnr1.Width = 90;
+            // 
+            // Navn1
+            // 
+            this.Navn1.Text = "Navn";
+            this.Navn1.Width = 90;
+            // 
+            // maerke1
+            // 
+            this.maerke1.Text = "maerke";
+            this.maerke1.Width = 90;
+            // 
+            // afdeling1
+            // 
+            this.afdeling1.Text = "afdeling";
+            this.afdeling1.Width = 90;
+            // 
+            // pris
+            // 
+            this.pris.Text = "pris";
+            this.pris.Width = 90;
+            // 
+            // aargang
+            // 
+            this.aargang.DisplayIndex = 7;
+            this.aargang.Text = "Årgang";
+            this.aargang.Width = 90;
+            // 
+            // startdato
+            // 
+            this.startdato.DisplayIndex = 5;
+            this.startdato.Text = "startdato";
+            this.startdato.Width = 90;
+            // 
+            // slutdato
+            // 
+            this.slutdato.DisplayIndex = 6;
+            this.slutdato.Text = "slutdato";
+            this.slutdato.Width = 90;
             // 
             // button5
             // 
@@ -262,16 +304,6 @@
             this.button8.Text = "Book";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(1049, 792);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(115, 37);
-            this.button10.TabIndex = 36;
-            this.button10.Text = "Hjælp";
-            this.button10.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -301,7 +333,6 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Location = new System.Drawing.Point(530, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(317, 346);
@@ -311,7 +342,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.listView3);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.textBox2);
@@ -322,26 +352,23 @@
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tilbehør";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(189, 275);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 19);
-            this.checkBox2.TabIndex = 42;
-            this.checkBox2.Text = "Udbringing";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
             // listView3
             // 
-            this.listView3.Location = new System.Drawing.Point(0, 21);
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.rnrt,
+            this.Navnt,
+            this.Maerket,
+            this.afdelingt});
+            this.listView3.Location = new System.Drawing.Point(-5, 21);
             this.listView3.Margin = new System.Windows.Forms.Padding(2);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(289, 234);
             this.listView3.TabIndex = 20;
             this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            this.listView3.SelectedIndexChanged += new System.EventHandler(this.ListView3_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -352,6 +379,7 @@
             this.button4.TabIndex = 41;
             this.button4.Text = "Tilføj";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // textBox2
             // 
@@ -371,6 +399,7 @@
             this.button7.TabIndex = 21;
             this.button7.Text = "Søg";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // groupBox3
             // 
@@ -400,6 +429,45 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kunde";
             this.groupBox3.Enter += new System.EventHandler(this.GroupBox3_Enter);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(130, 270);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(28, 15);
+            this.label19.TabIndex = 56;
+            this.label19.Text = "tom";
+            this.label19.Click += new System.EventHandler(this.Label19_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(61, 271);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 15);
+            this.label18.TabIndex = 55;
+            this.label18.Text = "debitornr";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(130, 251);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(28, 15);
+            this.label17.TabIndex = 54;
+            this.label17.Text = "tom";
+            this.label17.Click += new System.EventHandler(this.Label17_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(61, 252);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(16, 15);
+            this.label16.TabIndex = 53;
+            this.label16.Text = "tlf";
+            this.label16.Click += new System.EventHandler(this.Label16_Click);
             // 
             // label15
             // 
@@ -522,97 +590,93 @@
             this.label9.Text = "Start dato";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // Navn1
+            // rnrt
             // 
-            this.Navn1.Text = "Navn";
-            this.Navn1.Width = 90;
+            this.rnrt.Text = "rnr";
             // 
-            // rnr1
+            // Navnt
             // 
-            this.rnr1.Text = "rnr";
-            this.rnr1.Width = 90;
+            this.Navnt.Text = "Navn";
             // 
-            // maerke1
+            // Maerket
             // 
-            this.maerke1.Text = "maerke";
-            this.maerke1.Width = 90;
+            this.Maerket.Text = "Mærke";
             // 
-            // afdeling1
+            // afdelingt
             // 
-            this.afdeling1.Text = "afdeling";
-            this.afdeling1.Width = 90;
+            this.afdelingt.Text = "afdeling";
             // 
-            // pris
+            // listView1
             // 
-            this.pris.Text = "pris";
-            this.pris.Width = 90;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.listView1.Location = new System.Drawing.Point(108, 621);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(740, 167);
+            this.listView1.TabIndex = 46;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // startdato
+            // columnHeader1
             // 
-            this.startdato.DisplayIndex = 5;
-            this.startdato.Text = "startdato";
-            this.startdato.Width = 90;
+            this.columnHeader1.Text = "tnr";
+            this.columnHeader1.Width = 90;
             // 
-            // slutdato
+            // columnHeader2
             // 
-            this.slutdato.DisplayIndex = 6;
-            this.slutdato.Text = "slutdato";
-            this.slutdato.Width = 90;
+            this.columnHeader2.Text = "Navn";
+            this.columnHeader2.Width = 90;
             // 
-            // aargang
+            // columnHeader3
             // 
-            this.aargang.DisplayIndex = 7;
-            this.aargang.Text = "Årgang";
-            this.aargang.Width = 90;
+            this.columnHeader3.Text = "maerke";
+            this.columnHeader3.Width = 90;
             // 
-            // label16
+            // columnHeader4
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(61, 252);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(16, 15);
-            this.label16.TabIndex = 53;
-            this.label16.Text = "tlf";
-            this.label16.Click += new System.EventHandler(this.Label16_Click);
+            this.columnHeader4.Text = "afdeling";
+            this.columnHeader4.Width = 90;
             // 
-            // label17
+            // columnHeader5
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(130, 251);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 15);
-            this.label17.TabIndex = 54;
-            this.label17.Text = "tom";
-            this.label17.Click += new System.EventHandler(this.Label17_Click);
+            this.columnHeader5.Text = "pris";
+            this.columnHeader5.Width = 90;
             // 
-            // label18
+            // columnHeader6
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(61, 271);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 15);
-            this.label18.TabIndex = 55;
-            this.label18.Text = "debitornr";
+            this.columnHeader6.DisplayIndex = 7;
+            this.columnHeader6.Text = "Årgang";
+            this.columnHeader6.Width = 90;
             // 
-            // label19
+            // columnHeader7
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(130, 270);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(28, 15);
-            this.label19.TabIndex = 56;
-            this.label19.Text = "tom";
-            this.label19.Click += new System.EventHandler(this.Label19_Click);
+            this.columnHeader7.DisplayIndex = 5;
+            this.columnHeader7.Text = "startdato";
+            this.columnHeader7.Width = 90;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.DisplayIndex = 6;
+            this.columnHeader8.Text = "slutdato";
+            this.columnHeader8.Width = 90;
             // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 841);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button8);
@@ -646,13 +710,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ListView listView4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -673,7 +735,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ColumnHeader Navn;
         private System.Windows.Forms.ColumnHeader rnr;
         private System.Windows.Forms.ColumnHeader Mærke;
@@ -690,5 +751,18 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ColumnHeader rnrt;
+        private System.Windows.Forms.ColumnHeader Navnt;
+        private System.Windows.Forms.ColumnHeader Maerket;
+        private System.Windows.Forms.ColumnHeader afdelingt;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }

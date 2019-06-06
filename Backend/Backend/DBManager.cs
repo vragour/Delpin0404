@@ -322,5 +322,46 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
             return booking;
         }
+
+        public List<TilbehoerObj> FindFrietilbehoerMaerkelNavn(string startdate, string slutdate, string search)
+        {
+
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+
+            string sql = "select * from v2_Tilbehoer " +
+                "where not exists" +
+                    "(select '' from v2_Reservation_Line_Tilbehoer " +
+                    "where '" + startdate + "' <= v2_Reservation_Line_Tilbehoer.Orderslut " +
+                    "and '" + slutdate + "' >= v2_Reservation_Line_Tilbehoer.OrderStart " +
+                    "and v2_Reservation_Line_Tilbehoer.tnr = v2_Tilbehoer.tnr) " +
+                    "and (v2_Tilbehoer.Navn like '%" + search + "%' " +
+                    "or v2_Tilbehoer.Maerke like '%" + search + "%') order by anr;";
+
+            com.CommandText = sql;
+            List<TilbehoerObj> tilbehoerObjs = new List<TilbehoerObj>();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                TilbehoerObj t = new TilbehoerObj(
+                    Convert.ToString(reader["Navn"]),
+                    Convert.ToInt32(reader["tnr"]),
+                    Convert.ToInt32(reader["Aargang"]),
+                    Convert.ToString(reader["Maerke"]),
+                    Convert.ToDouble(reader["Pris"]),
+                    Convert.ToInt32(reader["rnr"]),
+                    Convert.ToInt32(reader["anr"])
+                );
+                tilbehoerObjs.Add(t);
+            }
+            reader.Close();
+            conn.Close();
+            return tilbehoerObjs;
+        }
+
+
+
+
     }
 }

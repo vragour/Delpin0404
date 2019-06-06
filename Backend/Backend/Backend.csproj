@@ -56,6 +56,8 @@
     <Compile Include="resserversline.cs" />
     <Compile Include="Ressource.cs" />
     <Compile Include="Tilbehoer.cs" />
+    <Compile Include="TilbehoerObj.cs" />
+    <Compile Include="TilbehoerObjLine.cs" />
     <Compile Include="TotalPris.cs" />
   </ItemGroup>
   <ItemGroup>
