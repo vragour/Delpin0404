@@ -274,22 +274,22 @@ namespace Backend
         }
 
 
-        public void insertBooking(int dnr, int bookid)
+        public void insertBooking(int dnr)
         {
 
             conn.Open();
             SqlCommand com = new SqlCommand();
             com.Connection = conn;
 
-            string sql = "insert into v2_Booking (dnr, Book_ID) " +
-                "values (" + dnr + ", " + bookid + ");";
+            string sql = "insert into v2_Booking (dnr) " +
+                "values (" + dnr + ");";
             com.CommandText = sql;
             com.ExecuteNonQuery();
             conn.Close();
 
         }
 
-        public void insertReserveringsline(int Resnr, string orderstart, string orderslut, double pris, int rnr, int bookid)
+        public void insertReserveringsline(string orderstart, string orderslut, double pris, int rnr, int bookid)
         {
 
             conn.Open();
@@ -297,7 +297,7 @@ namespace Backend
             com.Connection = conn;
 
             string sql = "insert into v2_Reservation_Line_Ressourcer " +
-                "values (" + Resnr + ", '" + orderstart + "', '" + orderslut + "', '" + pris + "', " + rnr + ", " + bookid + ");";
+                "values ('" + orderstart + "', '" + orderslut + "', '" + pris + "', " + rnr + ", " + bookid + ");";
             com.CommandText = sql;
             com.ExecuteNonQuery();
             conn.Close();

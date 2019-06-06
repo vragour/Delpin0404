@@ -71,14 +71,14 @@ namespace Backend
             ressources = connection.HentRessourcerPaaRnr(startdate, slutdate, rnr);
         }
 
-        public void insertBooking(int dnr, int bookid)
+        public void insertBooking(int dnr)
         {
-            connection.insertBooking(dnr, bookid);
+            connection.insertBooking(dnr);
         }
 
-        public void insertReserveringsline(int Resnr, string orderstart, string orderslut, double pris, int rnr, int bookid)
+        public void insertReserveringsline(string orderstart, string orderslut, double pris, int rnr, int bookid)
         {
-            connection.insertReserveringsline(Resnr, orderstart, orderslut, pris, rnr, bookid);
+            connection.insertReserveringsline(orderstart, orderslut, pris, rnr, bookid);
         }
 
     }

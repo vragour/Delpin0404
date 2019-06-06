@@ -16,9 +16,8 @@ namespace Backend
         int _rnr;
         int _Book_ID;
 
-        public resserversline(int resnr, string orderstart, string orderslut, double pris, int rnr, int bookid)
+        public resserversline(string orderstart, string orderslut, double pris, int rnr, int bookid)
         {
-            _ResNr = resnr;
             _Orderstart = orderstart;
             _OrderSlut = orderslut;
             _Pris = pris;

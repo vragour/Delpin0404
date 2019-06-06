@@ -182,8 +182,8 @@
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Navn,
             this.rnr,
+            this.Navn,
             this.Mærke,
             this.afdeling});
             this.listView2.Location = new System.Drawing.Point(0, 19);

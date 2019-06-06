@@ -59,8 +59,8 @@ namespace Delpin
             //MessageBox.Show(slutdate);
             foreach (var item in dBController.ressources)
             {
-                ListViewItem itm = new ListViewItem(item.Navn, 0);
-                itm.SubItems.Add(Convert.ToString(item.Rnr));
+                ListViewItem itm = new ListViewItem(Convert.ToString(item.Rnr, 0));
+                itm.SubItems.Add(item.Navn);
                 itm.SubItems.Add(item.Maerke);
                 itm.SubItems.Add(Convert.ToString(item.Anr));
                 itm.SubItems.Add(Convert.ToString(item.Pris));
@@ -155,7 +155,16 @@ namespace Delpin
 
         private void Button8_Click(object sender, EventArgs e)
         {
+            DBController controller = new DBController();
+            controller.insertBooking(Convert.ToInt32(label9.Text));
+            //hent booking id
 
+            //
+
+            foreach (var item in listView4.Items)
+            {
+                //
+            }
         }
 
 
