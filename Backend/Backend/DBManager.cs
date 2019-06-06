@@ -360,8 +360,58 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             return tilbehoerObjs;
         }
 
+        public void SletReserveringlinjeRessourcer(int Resnr)
+        {
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+
+            string sql = "delete v2_Reservation_Line_Ressourcer where rnr = " + Resnr;
+
+            com.CommandText = sql;
+            com.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void SletReserveringlinjeTilbehoer(int Resnr)
+        {
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            string sql = "delete v2_Reservation_Line_Tilbehoer where ResNr = " + Resnr;
+
+            com.CommandText = sql;
+            com.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        //public void UpdateReserveringlinjeTilbehoer(string orderstart, string orderslut, double total, int tnr, int book_ID) {
+
+        //    conn.Open();
+        //    SqlCommand com = new SqlCommand();
+        //    com.Connection = conn;
+
+        //    //string navn, int rnr, int aagang, string maerke, double pris, int anr
+
+        //    string sql = "update v2_Ressourcer " +
+        //                "set" +
+        //                    " Navn = " + Navn +
+        //                    " Aagang = " + Aargang +
+        //                    " Maerke = " + Maerke +
+        //                    " Pris = " + Pris +
+        //                    " anr = " + anr +
+        //                " Where rnr =" + rnr;
+
+        //    com.CommandText = sql;
+        //    com.ExecuteNonQuery();
+        //    conn.Close();
 
 
+        //}
+        public void UpdateReserveringlinjeRessourcer(string orderstart, string orderslut, double total, int rnr, int book_ID) {
+
+
+        }
 
     }
 }
