@@ -243,5 +243,11 @@ namespace Backend
             conn.Close();
             return ressources;
         }
+
+
+        public insertBooking()
+        {
+
+        }
     }
 }

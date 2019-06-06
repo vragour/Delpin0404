@@ -169,5 +169,88 @@ namespace Delpin
             listView2.Items.Add(listViewItem);
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            
+            DBController dBController = new DBController();
+
+            
+            dBController.HentDebitor(textBox1.Text);
+            if (dBController.debitor.Count() == 1) {
+                foreach (var item in dBController.debitor)
+                {
+                    label13.Text = item.Navn;
+                    label12.Text = item.Adresse;
+                    label11.Text = item.By;
+                    Label8.Text = item.PostNr;
+                    lab
+                    if (item.KundeType == "F")
+                    {
+                        label15.Text = item.KundeNr;
+                    }
+                    else
+                    {
+                        label7.Text = item.KundeNr;
+                    }
+                    label17.Text = item.Tlf;
+                    label19.Text = item.
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingen kunde med dette tlf, opret en ny");
+            }
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
