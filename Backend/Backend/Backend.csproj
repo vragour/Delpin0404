@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Afdeling.cs" />
     <Compile Include="AfdRessObj.cs" />
+    <Compile Include="Booking.cs" />
     <Compile Include="DBController.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Debitor.cs" />
