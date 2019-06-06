@@ -89,7 +89,7 @@ namespace Delpin
             DialogResult dialogResult = MessageBox.Show("Vil du slette kunden", "Sletning af kunde", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
-                controller.DeleteDebitor(listView1.SelectedItems[0].SubItems[6].Text);
+                controller.DeleteDebitor();
             }
             else if (dialogResult == DialogResult.No)
             {
