@@ -38,15 +38,15 @@ namespace Backend
 
         }
 
-        public void InsertDebitor(string navn, string adresse, int postNr, string by, string medarbejderNr, string kundeType, string tlf, string kundeNr)
+        public void InsertDebitor(string navn, string adresse, int postNr, string by, string kundeType, string tlf, string kundeNr)
         {
-            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, kundeType, tlf, kundeNr);
+            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, kundeType, tlf, kundeNr);
             connection.InserDebitor(debitorObj);
         }
 
-        public void UpdatetDebitor(string navn, string adresse, int postNr, string by, string medarbejderNr, string kundeType, string tlf, string kundeNr)
+        public void UpdatetDebitor(string navn, string adresse, int postNr, string by, string debitorNr, string kundeType, string tlf, string kundeNr)
         {
-            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, kundeType, tlf, kundeNr);
+            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, debitorNr, kundeType, tlf, kundeNr);
             connection.UpdateDebitor(debitorObj);
         }
 
