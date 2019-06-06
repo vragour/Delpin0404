@@ -62,11 +62,12 @@ namespace Backend
 
         public void InserDebitor(DebitorObj debitorObj)
         {
-            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], Kundetype, TLF, Kundenr) " +
+            string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
             $"values ('{debitorObj.Navn}'," +
                    $" '{debitorObj.Adresse}'," +
                    $" {debitorObj.PostNr}," +
                    $" '{debitorObj.By}'," +
+                   $" '{debitorObj.MedarbejderNr}'," +
                    $" '{debitorObj.KundeType}'," +
                    $" {debitorObj.Tlf}," +
                    $" '{debitorObj.KundeNr}')";
@@ -99,12 +100,13 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
                         Convert.ToString(reader["Adresse"]),
                         Convert.ToInt32(reader["Postnr"]),
                         Convert.ToString(reader["By"]),
+                        Convert.ToString(reader["manr"]),
                         Convert.ToString(reader["dnr"]),
                         Convert.ToString(reader["Kundetype"]),
                         Convert.ToString(reader["TLF"]),
                         Convert.ToString(reader["Kundenr"])
                     );
-                break;//Dibitors can have the same phonenumber, don't know why.
+                break;
             }
             reader.Close();
             comm.Connection.Close();
@@ -118,6 +120,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
                 $"Adresse='{debitorObj.Adresse}'," +
                 $"PostNr={debitorObj.PostNr}, " +
                 $"[By]='{debitorObj.By}', " +
+                $"='{debitorObj.MedarbejderNr}', " +
                 $"KundeType='{debitorObj.KundeType}', " +
                 $"TLf='{debitorObj.Tlf}', " +
                 $"Kundenr='{debitorObj.KundeNr}'" +

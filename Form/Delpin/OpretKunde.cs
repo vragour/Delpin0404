@@ -19,6 +19,7 @@ namespace Delpin
                 textBox2.Text, 
                 int.Parse(textBox3.Text),
                 textBox4.Text, 
+                textBox5.Text,
                 textBox6.Text,
                 textBox7.Text,
                 textBox8.Text);
@@ -27,6 +28,7 @@ namespace Delpin
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
+            textBox5.Clear();
             textBox6.Clear();
             textBox7.Clear();
             textBox8.Clear();

@@ -26,6 +26,7 @@ namespace Delpin
             listView1.Columns.Add("Adresse", 60);
             listView1.Columns.Add("PostNr", 60);
             listView1.Columns.Add("By", 60);
+            listView1.Columns.Add("MedarbejderNr", 60);
             listView1.Columns.Add("DebitorNr", 60);
             listView1.Columns.Add("KundeType", 60);
             listView1.Columns.Add("TLF", 60);
@@ -97,7 +98,8 @@ namespace Delpin
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
+        {   /*TextBox5 is a ForeignKey and is ReadOnly to avoid conflict 
+              TextBox6 is a PrimaryKey with Identity Increment */
             controller.UpdatetDebitor(textBox1.Text,
                                       textBox2.Text,
                                       int.Parse(textBox3.Text),
@@ -105,39 +107,37 @@ namespace Delpin
                                       textBox5.Text,
                                       textBox6.Text,
                                       textBox7.Text,
-                                      textBox8.Text );
+                                      textBox8.Text,
+                                      textBox9.Text
+                                      );
         }
 
         private void button2_Click(object sender, EventArgs e)//search
         {
-            /*Needs Error handling for when nothing is typed in textBox9*/
-            DebitorObj debitorObj = controller.HentDebitor(textBox9.Text);
+            /*Needs Error handling for when nothing is typed in textBox10*/
+            controller.HentDebitor(textBox10.Text);
+            DebitorObj debitorObj = controller.debitor[0];
 
-            string[] arr = new string[8];
-            
-                arr[0] = debitorObj.Navn;
-                arr[1] = debitorObj.Adresse;
-                arr[2] = debitorObj.PostNr.ToString();
-                arr[3] = debitorObj.By;
-                arr[4] = debitorObj.DebitorNr;
-                arr[5] = debitorObj.KundeType;
-                arr[6] = debitorObj.Tlf;
-                arr[7] = debitorObj.KundeNr;
+            textBox1.Text = debitorObj.Navn;
+            textBox2.Text = debitorObj.Adresse;
+            textBox3.Text = debitorObj.PostNr.ToString();
+            textBox4.Text = debitorObj.By;
+            textBox5.Text = debitorObj.MedarbejderNr;
+            textBox6.Text = debitorObj.DebitorNr;
+            textBox7.Text = debitorObj.KundeType;
+            textBox8.Text = debitorObj.Tlf;
+            textBox9.Text = debitorObj.KundeNr;
 
-            ListViewItem itm = new ListViewItem(arr);
-                listView1.Items.Add(itm);
+            controller.debitor.Remove(debitorObj);//maybe
+
+            Console.WriteLine(debitorObj.DebitorNr);
+                
+                
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox1.Text = listView1.SelectedItems[0].SubItems[0].Text;
-            textBox2.Text = listView1.SelectedItems[0].SubItems[1].Text;
-            textBox3.Text = listView1.SelectedItems[0].SubItems[2].Text;
-            textBox4.Text = listView1.SelectedItems[0].SubItems[3].Text;
-            textBox5.Text = listView1.SelectedItems[0].SubItems[4].Text;
-            textBox6.Text = listView1.SelectedItems[0].SubItems[5].Text;
-            textBox7.Text = listView1.SelectedItems[0].SubItems[6].Text;
-            textBox8.Text = listView1.SelectedItems[0].SubItems[7].Text;
+            
         }
     }
 }
