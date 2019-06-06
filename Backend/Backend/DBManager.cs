@@ -80,12 +80,16 @@ namespace Backend
             comm.Connection.Close();
         }
 
-        public DebitorObj FindDebitor(string debitorTlf) {
+        public DebitorObj FindDebitor(string debitorTlf)
+        {
+            /* DebitorObj is assigned null and will remain null
+             * unless an occurrence,@param debitorTlf ,is found in the database.*/
             DebitorObj debitorObj = null;
+
             string sqlCmdText = $"select * from v2_Debitor where Tlf ='{debitorTlf}'";
             SqlCommand comm = new SqlCommand(sqlCmdText, conn);
-
             comm.Connection.Open();
+
             SqlDataReader reader = comm.ExecuteReader();
             while (reader.Read())
             {
@@ -99,11 +103,41 @@ namespace Backend
                         Convert.ToString(reader["TLF"]),
                         Convert.ToString(reader["Kundenr"])
                     );
-                break;
+                break;//Dibitors can have the same phonenumber, don't know why.
             }
             reader.Close();
             comm.Connection.Close();
             return debitorObj;
+        }
+
+        public void UpdateDebitor(DebitorObj debitorObj)
+        {
+            string sqlCmdText = $"Update v2_Debitor set " +
+                $"Navn='{debitorObj.Navn}'," +
+                $"Adresse='{debitorObj.Adresse}'," +
+                $"PostNr={debitorObj.PostNr}, " +
+                $"[By]='{debitorObj.By}', " +
+                $"KundeType='{debitorObj.KundeType}', " +
+                $"TLf='{debitorObj.Tlf}', " +
+                $"Kundenr='{debitorObj.KundeNr}'" +
+                $" where Tlf = '{debitorObj.Tlf}'";
+            /*Initalizing SqlCommand object comm with two paramerets: 
+             * @parm conn, gives comm connection abilities.
+             * @param sqlCmdText, QueryText to be executed at Database server.*/
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
+            comm.Connection.Open();
+            comm.ExecuteNonQuery();
+            comm.Connection.Close();
+        }
+
+        public void DeleteDebitor(string debitorTlf)
+        {
+            string sqlCmdText = $"Delete from v2_Debitor " +
+                                  $" where Tlf = '{debitorTlf}'";
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
+            comm.Connection.Open();
+            comm.ExecuteNonQuery();
+            comm.Connection.Close();
         }
 
         public void updateRessource(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
@@ -122,8 +156,6 @@ namespace Backend
                             " Pris = " + Pris +
                             " anr = " + anr +
                         " Where rnr =" + rnr;
-
-
 
             com.CommandText = sql;
             com.ExecuteNonQuery();
@@ -151,14 +183,11 @@ namespace Backend
             string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
                          "from v2_Ressourcer r join v2_Afdeling a on not exists" +
                          "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
-            /*Initalizing SqlCommand object comm with two paramerets: 
-             * @parm conn, gives comm connection abilities.
-             * @param sqlCmdText, QueryText to be executed at Database server.*/
+            
             SqlCommand comm = new SqlCommand(sqlCmdText,conn);
             comm.Connection.Open();
 
             SqlDataReader reader = comm.ExecuteReader();
-
             while (reader.Read())
             {
                 ressources.Add(
