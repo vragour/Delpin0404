@@ -116,13 +116,13 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
         public void UpdateDebitor(DebitorObj debitorObj)
         {
             string sqlCmdText = $"Update v2_Debitor set " +
-                $"Navn='{debitorObj.Navn}'," +
-                $"Adresse='{debitorObj.Adresse}'," +
-                $"PostNr={debitorObj.PostNr}, " +
-                $"[By]='{debitorObj.By}', " +
-                $"KundeType='{debitorObj.KundeType}', " +
-                $"TLf='{debitorObj.Tlf}', " +
-                $"Kundenr='{debitorObj.KundeNr}'" +
+                $" Navn='{debitorObj.Navn}'," +
+                $" Adresse='{debitorObj.Adresse}'," +
+                $" PostNr={debitorObj.PostNr}, " +
+                $" [By]='{debitorObj.By}', " +
+                $" KundeType='{debitorObj.KundeType}', " +
+                $" TLf='{debitorObj.Tlf}', " +
+                $" Kundenr='{debitorObj.KundeNr}'" +
                 $" where Tlf = '{debitorObj.Tlf}'";
             /*Initalizing SqlCommand object comm with two paramerets: 
              * @parm conn, gives comm connection abilities.
