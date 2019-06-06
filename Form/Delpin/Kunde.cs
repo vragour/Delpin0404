@@ -22,15 +22,15 @@ namespace Delpin
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
 
-            listView1.Columns.Add("Navn", 60);
-            listView1.Columns.Add("Adresse", 60);
-            listView1.Columns.Add("PostNr", 60);
-            listView1.Columns.Add("By", 60);
-            listView1.Columns.Add("MedarbejderNr", 60);
-            listView1.Columns.Add("DebitorNr", 60);
-            listView1.Columns.Add("KundeType", 60);
-            listView1.Columns.Add("TLF", 60);
-            listView1.Columns.Add("KundeNr", 60);
+            listView1.Columns.Add("Navn", 70);
+            listView1.Columns.Add("Adresse", 70);
+            listView1.Columns.Add("PostNr", 70);
+            listView1.Columns.Add("By", 70);
+            listView1.Columns.Add("MedarbejderNr", 70);
+            listView1.Columns.Add("DebitorNr", 70);
+            listView1.Columns.Add("KundeType", 70);
+            listView1.Columns.Add("TLF", 70);
+            listView1.Columns.Add("KundeNr", 70);
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -89,13 +89,17 @@ namespace Delpin
             DialogResult dialogResult = MessageBox.Show("Vil du slette kunden", "Sletning af kunde", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
-                controller.DeleteDebitor();
+                controller.DeleteDebitor(textBox10.Text);
+                ClearTextBoxes();
+
             }
             else if (dialogResult == DialogResult.No)
             {
                 //gør ingenting
             }
         }
+
+        
 
         private void button6_Click(object sender, EventArgs e)
         {   /*TextBox5 is a ForeignKey and is ReadOnly to avoid conflict 
@@ -110,8 +114,8 @@ namespace Delpin
                                       textBox8.Text,
                                       textBox9.Text
                                       );
+            ClearTextBoxes();
         }
-
         private void button2_Click(object sender, EventArgs e)//search
         {
             /*Needs Error handling for when nothing is typed in textBox10*/
@@ -128,16 +132,24 @@ namespace Delpin
             textBox8.Text = debitorObj.Tlf;
             textBox9.Text = debitorObj.KundeNr;
 
-            controller.debitor.Remove(debitorObj);//maybe
+            
 
             Console.WriteLine(debitorObj.DebitorNr);
                 
                 
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ClearTextBoxes()
         {
-            
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+            textBox9.Clear();
         }
+
     }
 }

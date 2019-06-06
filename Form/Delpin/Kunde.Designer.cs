@@ -60,9 +60,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(396, 683);
+            this.button4.Location = new System.Drawing.Point(267, 20);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 30);
+            this.button4.Size = new System.Drawing.Size(80, 31);
             this.button4.TabIndex = 71;
             this.button4.Text = "Slet Kunde";
             this.button4.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(229, 497);
+            this.button6.Location = new System.Drawing.Point(229, 489);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(103, 30);
             this.button6.TabIndex = 70;
@@ -197,11 +197,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(331, 12);
+            this.button1.Location = new System.Drawing.Point(229, 648);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 63);
+            this.button1.Size = new System.Drawing.Size(103, 30);
             this.button1.TabIndex = 54;
-            this.button1.Text = "Opret Kunde";
+            this.button1.Text = "Opret";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -210,17 +210,18 @@
             this.groupBox1.Controls.Add(this.textBox10);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.groupBox1.Location = new System.Drawing.Point(19, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 63);
+            this.groupBox1.Size = new System.Drawing.Size(353, 63);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Find kunde";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(57, 26);
+            this.textBox10.Location = new System.Drawing.Point(115, 30);
             this.textBox10.Margin = new System.Windows.Forms.Padding(2);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(88, 21);
@@ -229,7 +230,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 24);
+            this.label10.Location = new System.Drawing.Point(79, 35);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 16);
@@ -238,7 +239,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(164, 21);
+            this.button2.Location = new System.Drawing.Point(10, 21);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(65, 30);
@@ -267,7 +268,6 @@
             this.listView1.Size = new System.Drawing.Size(692, 666);
             this.listView1.TabIndex = 51;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // textBox7
             // 
@@ -307,8 +307,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
@@ -324,7 +324,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.listView1);
