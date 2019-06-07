@@ -55,15 +55,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.BookingID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Maerke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.startdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.slutdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pris = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.resnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.aargang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -270,16 +261,6 @@
             // 
             // listView1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.resnr,
-            this.rnr,
-            this.BookingID,
-            this.Navn,
-            this.Maerke,
-            this.startdato,
-            this.slutdato,
-            this.pris,
-            this.aargang});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.listView1.Location = new System.Drawing.Point(396, 12);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
@@ -318,51 +299,6 @@
             this.label5.Size = new System.Drawing.Size(100, 16);
             this.label5.TabIndex = 75;
             this.label5.Text = "MedarbejderNr";
-            // 
-            // BookingID
-            // 
-            this.BookingID.Text = "BookingID";
-            this.BookingID.Width = 75;
-            // 
-            // rnr
-            // 
-            this.rnr.Text = "rnr";
-            this.rnr.Width = 75;
-            // 
-            // Navn
-            // 
-            this.Navn.Text = "Navn";
-            this.Navn.Width = 75;
-            // 
-            // Maerke
-            // 
-            this.Maerke.Text = "Maerke";
-            this.Maerke.Width = 75;
-            // 
-            // startdato
-            // 
-            this.startdato.Text = "startdato";
-            this.startdato.Width = 75;
-            // 
-            // slutdato
-            // 
-            this.slutdato.Text = "slutdato";
-            this.slutdato.Width = 75;
-            // 
-            // pris
-            // 
-            this.pris.Text = "pris";
-            this.pris.Width = 75;
-            // 
-            // resnr
-            // 
-            this.resnr.Text = "resnr";
-            this.resnr.Width = 75;
-            // 
-            // aargang
-            // 
-            this.aargang.Text = "Årgang";
-            this.aargang.Width = 75;
             // 
             // Kunde
             // 
@@ -431,14 +367,5 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ColumnHeader resnr;
-        private System.Windows.Forms.ColumnHeader rnr;
-        private System.Windows.Forms.ColumnHeader BookingID;
-        private System.Windows.Forms.ColumnHeader Navn;
-        private System.Windows.Forms.ColumnHeader Maerke;
-        private System.Windows.Forms.ColumnHeader startdato;
-        private System.Windows.Forms.ColumnHeader slutdato;
-        private System.Windows.Forms.ColumnHeader pris;
-        private System.Windows.Forms.ColumnHeader aargang;
     }
 }

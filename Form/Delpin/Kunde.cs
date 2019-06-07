@@ -22,15 +22,15 @@ namespace Delpin
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
 
+            listView1.Columns.Add("ResNr", 70);
+            listView1.Columns.Add("Rnr", 70);
+            listView1.Columns.Add("BookingID", 70);
             listView1.Columns.Add("Navn", 70);
-            listView1.Columns.Add("Adresse", 70);
-            listView1.Columns.Add("PostNr", 70);
-            listView1.Columns.Add("By", 70);
-            listView1.Columns.Add("MedarbejderNr", 70);
-            listView1.Columns.Add("DebitorNr", 70);
-            listView1.Columns.Add("KundeType", 70);
-            listView1.Columns.Add("TLF", 70);
-            listView1.Columns.Add("KundeNr", 70);
+            listView1.Columns.Add("Maerke", 70);
+            listView1.Columns.Add("StartDato", 70);
+            listView1.Columns.Add("SlutDato", 70);
+            listView1.Columns.Add("Pris", 70);
+            listView1.Columns.Add("Aargang", 70);
         }
 
         private void label10_Click(object sender, EventArgs e)
