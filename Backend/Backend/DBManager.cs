@@ -344,13 +344,13 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Open();
             SqlCommand com = new SqlCommand();
             com.Connection = conn;
-            string sql = "SELECT TOP 1 * FROM debitor ORDER BY ID DESC";
+            string sql = "SELECT TOP 1 * FROM v2_Booking ORDER BY Book_ID DESC";
             com.CommandText = sql;
             List<Booking> booking = new List<Booking>();
             SqlDataReader reader = com.ExecuteReader();
             while (reader.Read()) {
 
-                Booking b = new Booking(Convert.ToInt32(reader["dnr"]), Convert.ToInt32(reader["Booking_ID"]));
+                Booking b = new Booking(Convert.ToInt32(reader["dnr"]), Convert.ToInt32(reader["Book_ID"]));
                 booking.Add(b);
             }
 

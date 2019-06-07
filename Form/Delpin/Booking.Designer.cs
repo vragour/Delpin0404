@@ -58,6 +58,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.rnrt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Navnt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Maerket = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.afdelingt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -77,10 +81,6 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.rnrt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Navnt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Maerket = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.afdelingt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -370,6 +370,22 @@
             this.listView3.View = System.Windows.Forms.View.Details;
             this.listView3.SelectedIndexChanged += new System.EventHandler(this.ListView3_SelectedIndexChanged);
             // 
+            // rnrt
+            // 
+            this.rnrt.Text = "rnr";
+            // 
+            // Navnt
+            // 
+            this.Navnt.Text = "Navn";
+            // 
+            // Maerket
+            // 
+            this.Maerket.Text = "Mærke";
+            // 
+            // afdelingt
+            // 
+            this.afdelingt.Text = "afdeling";
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(139, 309);
@@ -589,22 +605,6 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Start dato";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // rnrt
-            // 
-            this.rnrt.Text = "rnr";
-            // 
-            // Navnt
-            // 
-            this.Navnt.Text = "Navn";
-            // 
-            // Maerket
-            // 
-            this.Maerket.Text = "Mærke";
-            // 
-            // afdelingt
-            // 
-            this.afdelingt.Text = "afdeling";
             // 
             // listView1
             // 

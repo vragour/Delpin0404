@@ -57,5 +57,45 @@ namespace Delpin
         {
 
         }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //insert data til startdato, slutdato og pris;
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            //DBController controller = new DBController();
+            //controller.UpdateReserveringlinjeRessourcer(ResNr, orderstart, orderslut, total, book_ID);
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            //DBController controller = new DBController();
+            //controller.SletReserveringlinjeRessourcer(Resnr);
+
+        }
     }
 }

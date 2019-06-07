@@ -174,14 +174,20 @@ namespace Delpin
 
             foreach (ListViewItem item in listView4.Items)
             {
+
                 controller.insertReserveringsline(
-                    item.SubItems[5].Text.ToString(), 
-                    item.SubItems[6].Text.ToString(), 
-                    Convert.ToDouble(item.SubItems[4].Text), 
-                    Convert.ToInt32(item.SubItems[1].Text), 
-                    Convert.ToInt32(bookingId));
+                    item.SubItems[6].Text.ToString(),
+                    item.SubItems[7].Text.ToString(),
+                    Convert.ToDouble(item.SubItems[4].Text),
+                    Convert.ToInt32(item.SubItems[0].Text),
+                    bookingId);
                 
             }
+            
+
+            listView4.Items.Clear();
+            MessageBox.Show("Booking er lavet");
+
 
 
         }
@@ -223,8 +229,8 @@ namespace Delpin
                     }
                     label17.Text = item.Tlf;
 
-                    //mangler dnr;
-                    //label19.Text = item
+
+                    label19.Text = item.DebitorNr;
                 }
             }
             else
