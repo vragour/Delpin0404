@@ -132,10 +132,6 @@ namespace Delpin
             textBox8.Text = debitorObj.Tlf;
             textBox9.Text = debitorObj.KundeNr;
             controller.debitor.Clear();
-            
-
-            Console.WriteLine(debitorObj.DebitorNr);
-                
                 
         }
         private void ClearTextBoxes()
@@ -151,5 +147,15 @@ namespace Delpin
             textBox9.Clear();
         }
 
+        private void TextBox6_TextChanged(object sender, EventArgs e)
+        {
+            controller.FindDebitorRessourceBookinger(textBox6.Text);
+
+            string[] strArr = new string[9];
+
+            for (int i = 0; i <= controller.ressBookList.Count; i++) {
+
+            }
+        }
     }
 }
