@@ -121,9 +121,9 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
                 $" PostNr={debitorObj.PostNr}, " +
                 $" [By]='{debitorObj.By}', " +
                 $" KundeType='{debitorObj.KundeType}', " +
-                $" TLf='{debitorObj.Tlf}', " +
+                $" TLF='{debitorObj.Tlf}', " +
                 $" Kundenr='{debitorObj.KundeNr}'" +
-                $" where Tlf = '{debitorObj.Tlf}'";
+                $" where TLF = '{debitorObj.Tlf}'";
             /*Initalizing SqlCommand object comm with two paramerets: 
              * @parm conn, gives comm connection abilities.
              * @param sqlCmdText, QueryText to be executed at Database server.*/
