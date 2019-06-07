@@ -35,12 +35,22 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.ResNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.aargang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.maerke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pris = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Startdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Slutdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,9 +74,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Ordre nr";
+            this.label1.Text = "Booking nr";
             this.label1.UseWaitCursor = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -93,12 +103,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Location = new System.Drawing.Point(434, 13);
+            this.groupBox2.Location = new System.Drawing.Point(186, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(417, 502);
+            this.groupBox2.Size = new System.Drawing.Size(665, 421);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "reservinger";
+            this.groupBox2.Text = "Reservinger";
             this.groupBox2.UseWaitCursor = true;
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
@@ -118,30 +128,6 @@
             this.textBox3.TabIndex = 3;
             this.textBox3.UseWaitCursor = true;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(79, 270);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
-            this.textBox4.UseWaitCursor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(79, 222);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 5;
-            this.textBox5.UseWaitCursor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(79, 311);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 6;
-            this.textBox6.UseWaitCursor = true;
-            // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(79, 181);
@@ -152,31 +138,120 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(0, 19);
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ResNr,
+            this.Navn,
+            this.rnr,
+            this.aargang,
+            this.maerke,
+            this.pris,
+            this.Startdato,
+            this.Slutdato});
+            this.listView1.Location = new System.Drawing.Point(0, 23);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(413, 479);
+            this.listView1.Size = new System.Drawing.Size(665, 398);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Na";
+            this.label2.Text = "Startdato";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Slutdato";
+            this.label4.Click += new System.EventHandler(this.Label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 184);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "pris";
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(104, 230);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Updater";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 230);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Slet ";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // ResNr
+            // 
+            this.ResNr.Text = "ResNr";
+            // 
+            // Navn
+            // 
+            this.Navn.Text = "Navn";
+            // 
+            // aargang
+            // 
+            this.aargang.Text = "Årgang";
+            // 
+            // maerke
+            // 
+            this.maerke.Text = "Mærke";
+            // 
+            // pris
+            // 
+            this.pris.Text = "pris";
+            // 
+            // Startdato
+            // 
+            this.Startdato.Text = "Startdato";
+            // 
+            // Slutdato
+            // 
+            this.Slutdato.Text = "Slutdato";
             // 
             // updateRes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 523);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox2);
@@ -202,11 +277,21 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ColumnHeader ResNr;
+        private System.Windows.Forms.ColumnHeader Navn;
+        private System.Windows.Forms.ColumnHeader rnr;
+        private System.Windows.Forms.ColumnHeader aargang;
+        private System.Windows.Forms.ColumnHeader maerke;
+        private System.Windows.Forms.ColumnHeader pris;
+        private System.Windows.Forms.ColumnHeader Startdato;
+        private System.Windows.Forms.ColumnHeader Slutdato;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
