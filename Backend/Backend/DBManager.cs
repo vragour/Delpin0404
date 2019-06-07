@@ -459,15 +459,13 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
         }
 
-        public void UpdateReserveringlinjeTilbehoer(string ResNr, string orderstart, string orderslut, double total, int tnr, int book_ID)
+        public void UpdateReserveringlinjeTilbehoer(int ResNr, string orderstart, string orderslut, double total)
         {
             string sql = "update v2_Reservering_linje_Tilbehoer " +
             "set" +
                 " OrderStart = " + orderstart +
                 " Orderslut = " + orderslut +
                 " Total = " + total +
-                " tnr = " + tnr +
-                " Book_ID = " + book_ID +
             " Where ResNr =" + ResNr;
             conn.Open();
             SqlCommand com = new SqlCommand();
@@ -478,7 +476,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
 
 
         }
-        public void UpdateReserveringlinjeRessourcer(string ResNr, string orderstart, string orderslut, double total) {
+        public void UpdateReserveringlinjeRessourcer(int ResNr, string orderstart, string orderslut, double total) {
                 string sql = "update v2_Reservering_linje_Ressourcer " +
                             "set" +
                             " OrderStart = " + orderstart +

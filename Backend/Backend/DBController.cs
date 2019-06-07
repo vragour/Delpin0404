@@ -100,10 +100,10 @@ namespace Backend
             tilbehoer = connection.FindFrietilbehoerMaerkelNavn(startdate, slutdate, search);
         }
 
-        public void UpdateReserveringlinjeTilbehoer(string ResNr, string orderstart, string orderslut, double total, int tnr, int book_ID)
-        { connection.UpdateReserveringlinjeTilbehoer(ResNr, orderstart, orderslut, total, tnr, book_ID); }
+        public void UpdateReserveringlinjeTilbehoer(int ResNr, string orderstart, string orderslut, double total)
+        { connection.UpdateReserveringlinjeTilbehoer(ResNr, orderstart, orderslut, total); }
 
-        public void UpdateReserveringlinjeRessourcer(string ResNr, string orderstart, string orderslut, double total, int rnr, int book_ID)
+        public void UpdateReserveringlinjeRessourcer(int ResNr, string orderstart, string orderslut, double total)
         
         { connection.UpdateReserveringlinjeRessourcer(ResNr, orderstart, orderslut, total); }
         public void SletReserveringlinjeTilbehoer(int Resnr)

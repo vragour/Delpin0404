@@ -52,8 +52,7 @@ namespace Delpin
                 controller.FindRessourceBookinger(Convert.ToInt32(textBox1.Text));
                 foreach (var item in controller.ressBookList)
                 {
-                    ListViewItem itm = new ListViewItem();
-                    itm.SubItems.Add(item.ResNr.ToString());
+                    ListViewItem itm = new ListViewItem(item.ResNr.ToString(), 0);
                     itm.SubItems.Add(item.Navn);
                     itm.SubItems.Add(item.Rnr.ToString());
                     itm.SubItems.Add(item.Aargang.ToString());
@@ -98,19 +97,27 @@ namespace Delpin
         {
             //insert data til startdato, slutdato og pris;
 
+            textBox2.Text = listView1.SelectedItems[0].SubItems[6].Text;
+            textBox3.Text = listView1.SelectedItems[0].SubItems[7].Text;
+            textBox7.Text = listView1.SelectedItems[0].SubItems[5].Text;
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //DBController controller = new DBController();
-            //controller.UpdateReserveringlinjeRessourcer(ResNr, orderstart, orderslut, total, book_ID);
+            DBController controller = new DBController();
+            controller.UpdateReserveringlinjeRessourcer(Convert.ToInt32(listView1.SelectedItems[0].SubItems[0].Text), textBox2.Text, textBox3.Text, Convert.ToDouble(textBox7.Text));
 
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            //DBController controller = new DBController();
-            //controller.SletReserveringlinjeRessourcer(Resnr);
+            DBController controller = new DBController();
+            controller.SletReserveringlinjeRessourcer(Convert.ToInt32(listView1.SelectedItems[0].SubItems[0].Text));
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
