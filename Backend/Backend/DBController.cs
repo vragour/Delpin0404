@@ -16,6 +16,7 @@ namespace Backend
         public List<Booking> bookings = new List<Booking>();
         public List<resserversline> resline = new List<resserversline>();
         public List<TilbehoerObj> tilbehoer = new List<TilbehoerObj>();
+        public List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
         public void HentAllFrieRessourcer(string startdate, string slutdate, string whereString = null)
         {
             ressources = connection.FindAlleFrieRessourcer(startdate, slutdate, whereString);
@@ -25,6 +26,12 @@ namespace Backend
         {
             /*Populate the List with Database Elements and let the controller keep the list*/
             afdRessObjs = connection.HentLedigeResourcerForAfdeling();
+        }
+
+        public void FindDebitorRessourceBookinger(string debitorID)
+        {
+            /*Populate the List with Database Elements and let the controller keep the list*/
+            ressBookList = connection.FindDebitorRessourceBookinger(debitorID);
         }
 
         public void ShowAllfrieRessourcer(string startdate, string slutdate)

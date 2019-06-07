@@ -59,13 +59,15 @@ namespace Backend
             conn.Close();
             return ressources;
         }
-
-        public List<DebitorRessBookObj> FindDebitorRessourceBookinger()
+        
+        public List<DebitorRessBookObj> FindDebitorRessourceBookinger(string debitorID)
         {
             List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
-            string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
-                         "from v2_Ressourcer r join v2_Afdeling a on not exists" +
-                         "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
+            string sqlCmdText = "select* from v2_Booking " +
+                         "join v2_Reservation_Line_Ressourcer" +
+                         "on v2_Reservation_Line_Ressourcer.Book_ID = v2_Booking.Book_ID" +
+                         "join v2_Ressourcer"+ "on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
+                         "where v2_Booking.dnr = " + debitorID;
 
             SqlCommand comm = new SqlCommand(sqlCmdText, conn);
             comm.Connection.Open();
@@ -73,16 +75,17 @@ namespace Backend
             SqlDataReader reader = comm.ExecuteReader();
             while (reader.Read())
             {
-
-                /*ressources.Add(
-                    new AfdRessObj(
-                    Convert.ToString(reader["Navn"]),
-                    Convert.ToInt32(reader["rnr"]),
-                    Convert.ToString(reader["Maerke"]),
-                    Convert.ToInt32(reader["Pris"]),
-                    Convert.ToString(reader["Adresse"]),
-                    Convert.ToInt16(reader["Postnr"])
-                    ));*/
+                ressBookList.Add(new DebitorRessBookObj(
+                          Convert.ToInt32(reader["ResNr"]),
+                          Convert.ToInt32(reader["rnr"]),
+                          Convert.ToInt32(reader["Book_ID"]),
+                          Convert.ToString(reader["Navn"]),
+                          Convert.ToString(reader["Maerke"]),
+                          Convert.ToString(reader["OrdreStart"]),
+                          Convert.ToString(reader["Ordreslut"]),
+                          Convert.ToInt32(reader["Pris"]),
+                          Convert.ToInt32(reader["Aargang"])
+                          ));
             }
 
             reader.Close();
