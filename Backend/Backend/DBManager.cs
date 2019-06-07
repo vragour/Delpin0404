@@ -60,6 +60,37 @@ namespace Backend
             return ressources;
         }
 
+        public List<DebitorRessBookObj> FindDebitorRessourceBookinger()
+        {
+            List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
+            string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
+                         "from v2_Ressourcer r join v2_Afdeling a on not exists" +
+                         "(select '' from v2_Reservation_Line_Ressourcer rs where rs.rnr = r.rnr)";
+
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
+            comm.Connection.Open();
+
+            SqlDataReader reader = comm.ExecuteReader();
+            while (reader.Read())
+            {
+
+                /*ressources.Add(
+                    new AfdRessObj(
+                    Convert.ToString(reader["Navn"]),
+                    Convert.ToInt32(reader["rnr"]),
+                    Convert.ToString(reader["Maerke"]),
+                    Convert.ToInt32(reader["Pris"]),
+                    Convert.ToString(reader["Adresse"]),
+                    Convert.ToInt16(reader["Postnr"])
+                    ));*/
+            }
+
+            reader.Close();
+            comm.Connection.Close();
+
+            return ressBookList;
+        }
+
         public void InserDebitor(DebitorObj debitorObj)
         {
             string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
@@ -424,6 +455,5 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
 
 
         }
-
     }
 }
