@@ -52,11 +52,11 @@ namespace Backend
         }
         public string StartDato
         {
-            get { return StartDato; }
+            get { return startDato; }
         }
         public string SlutDato
         {
-            get { return SlutDato; }
+            get { return slutDato; }
         }
         public int Pris
         {

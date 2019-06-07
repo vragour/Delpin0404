@@ -93,6 +93,7 @@
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(149, 21);
             this.textBox6.TabIndex = 67;
+            this.textBox6.TextChanged += new System.EventHandler(this.TextBox6_TextChanged);
             // 
             // textBox4
             // 
