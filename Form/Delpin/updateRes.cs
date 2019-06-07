@@ -52,5 +52,10 @@ namespace Delpin
             }
 
         }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
