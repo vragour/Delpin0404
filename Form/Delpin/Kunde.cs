@@ -131,7 +131,7 @@ namespace Delpin
             textBox7.Text = debitorObj.KundeType;
             textBox8.Text = debitorObj.Tlf;
             textBox9.Text = debitorObj.KundeNr;
-
+            controller.debitor.Clear();
             
 
             Console.WriteLine(debitorObj.DebitorNr);
