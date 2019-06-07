@@ -48,7 +48,23 @@ namespace Delpin
             }
             else
             {
-                
+                DBController controller = new DBController();
+                controller.FindRessourceBookinger(Convert.ToInt32(textBox1.Text));
+                foreach (var item in controller.ressBookList)
+                {
+                    ListViewItem itm = new ListViewItem();
+                    itm.SubItems.Add(item.ResNr.ToString());
+                    itm.SubItems.Add(item.Navn);
+                    itm.SubItems.Add(item.Rnr.ToString());
+                    itm.SubItems.Add(item.Aargang.ToString());
+                    itm.SubItems.Add(item.Maerke);
+                    itm.SubItems.Add(item.Pris.ToString());
+                    itm.SubItems.Add(item.StartDato);
+                    itm.SubItems.Add(item.SlutDato);
+                    listView1.Items.Add(itm);
+                }
+
+
             }
 
         }

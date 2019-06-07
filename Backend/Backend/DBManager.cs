@@ -100,7 +100,7 @@ namespace Backend
             string sqlCmdText = "select* from v2_Booking " +
                          " join v2_Reservation_Line_Ressourcer" +
                          " on v2_Reservation_Line_Ressourcer.Book_ID = v2_Booking.Book_ID" +
-                         " join v2_Ressourcer" + "on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
+                         " join v2_Ressourcer on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
                          " where v2_Booking.Book_ID = " + Book_ID;
 
             SqlCommand comm = new SqlCommand(sqlCmdText, conn);
@@ -115,8 +115,8 @@ namespace Backend
                           Convert.ToInt32(reader["Book_ID"]),
                           Convert.ToString(reader["Navn"]),
                           Convert.ToString(reader["Maerke"]),
-                          Convert.ToString(reader["OrdreStart"]),
-                          Convert.ToString(reader["Ordreslut"]),
+                          Convert.ToString(reader["OrderStart"]),
+                          Convert.ToString(reader["Orderslut"]),
                           Convert.ToInt32(reader["Pris"]),
                           Convert.ToInt32(reader["Aargang"])
                           ));
@@ -477,14 +477,12 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
 
 
         }
-        public void UpdateReserveringlinjeRessourcer(string ResNr, string orderstart, string orderslut, double total, int rnr, int book_ID) {
+        public void UpdateReserveringlinjeRessourcer(string ResNr, string orderstart, string orderslut, double total) {
                 string sql = "update v2_Reservering_linje_Ressourcer " +
                             "set" +
                             " OrderStart = " + orderstart +
                             " Orderslut = " + orderslut +
                             " Total = " + total +
-                            " tnr = " + rnr +
-                            " Book_ID = " + book_ID +
                             " Where ResNr =" + ResNr;
             conn.Open();
             SqlCommand com = new SqlCommand();

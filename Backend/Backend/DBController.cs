@@ -105,7 +105,7 @@ namespace Backend
 
         public void UpdateReserveringlinjeRessourcer(string ResNr, string orderstart, string orderslut, double total, int rnr, int book_ID)
         
-        { }
+        { connection.UpdateReserveringlinjeRessourcer(ResNr, orderstart, orderslut, total); }
         public void SletReserveringlinjeTilbehoer(int Resnr)
         { connection.SletReserveringlinjeTilbehoer(Resnr); }
         public void SletReserveringlinjeRessourcer(int Resnr)
