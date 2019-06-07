@@ -60,14 +60,14 @@ namespace Backend
             return ressources;
         }
         
-        public List<DebitorRessBookObj> FindDebitorRessourceBookinger(string debitorID)
+        public List<DebitorRessBookObj> FindDebitorRessourceBookinger(int debitorID)
         {
             List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
-            string sqlCmdText = "select* from v2_Booking " +
-                         "join v2_Reservation_Line_Ressourcer" +
-                         "on v2_Reservation_Line_Ressourcer.Book_ID = v2_Booking.Book_ID" +
-                         "join v2_Ressourcer"+ "on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
-                         "where v2_Booking.dnr = " + debitorID;
+            string sqlCmdText = "select * from v2_Booking " +
+                         " join v2_Reservation_Line_Ressourcer" +
+                         " on v2_Reservation_Line_Ressourcer.Book_ID = v2_Booking.Book_ID" +
+                         " join v2_Ressourcer"+ "on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
+                         " where v2_Booking.dnr = " + debitorID;
 
             SqlCommand comm = new SqlCommand(sqlCmdText, conn);
             comm.Connection.Open();
@@ -93,6 +93,43 @@ namespace Backend
 
             return ressBookList;
         }
+
+        public List<DebitorRessBookObj> FindRessourceBookinger(int Book_ID)
+        {
+            List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
+            string sqlCmdText = "select* from v2_Booking " +
+                         " join v2_Reservation_Line_Ressourcer" +
+                         " on v2_Reservation_Line_Ressourcer.Book_ID = v2_Booking.Book_ID" +
+                         " join v2_Ressourcer" + "on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
+                         " where v2_Booking.Book_ID = " + Book_ID;
+
+            SqlCommand comm = new SqlCommand(sqlCmdText, conn);
+            comm.Connection.Open();
+
+            SqlDataReader reader = comm.ExecuteReader();
+            while (reader.Read())
+            {
+                ressBookList.Add(new DebitorRessBookObj(
+                          Convert.ToInt32(reader["ResNr"]),
+                          Convert.ToInt32(reader["rnr"]),
+                          Convert.ToInt32(reader["Book_ID"]),
+                          Convert.ToString(reader["Navn"]),
+                          Convert.ToString(reader["Maerke"]),
+                          Convert.ToString(reader["OrdreStart"]),
+                          Convert.ToString(reader["Ordreslut"]),
+                          Convert.ToInt32(reader["Pris"]),
+                          Convert.ToInt32(reader["Aargang"])
+                          ));
+            }
+
+            reader.Close();
+            comm.Connection.Close();
+
+            return ressBookList;
+        }
+
+
+
 
         public void InserDebitor(DebitorObj debitorObj)
         {
