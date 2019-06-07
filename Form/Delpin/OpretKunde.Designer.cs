@@ -44,6 +44,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label7
@@ -52,7 +54,7 @@
             this.label7.Location = new System.Drawing.Point(13, 10);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 20);
+            this.label7.Size = new System.Drawing.Size(82, 16);
             this.label7.TabIndex = 53;
             this.label7.Text = "Opret Kunde";
             // 
@@ -73,7 +75,7 @@
             this.label8.Location = new System.Drawing.Point(13, 258);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 20);
+            this.label8.Size = new System.Drawing.Size(32, 16);
             this.label8.TabIndex = 51;
             this.label8.Text = "TLF";
             // 
@@ -82,7 +84,7 @@
             this.textBox8.Location = new System.Drawing.Point(181, 285);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(310, 25);
+            this.textBox8.Size = new System.Drawing.Size(310, 21);
             this.textBox8.TabIndex = 50;
             // 
             // label6
@@ -91,7 +93,7 @@
             this.label6.Location = new System.Drawing.Point(13, 223);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 20);
+            this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 47;
             this.label6.Text = "Kundetype";
             // 
@@ -100,7 +102,7 @@
             this.textBox6.Location = new System.Drawing.Point(181, 218);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(310, 25);
+            this.textBox6.Size = new System.Drawing.Size(310, 21);
             this.textBox6.TabIndex = 46;
             // 
             // label3
@@ -109,7 +111,7 @@
             this.label3.Location = new System.Drawing.Point(13, 155);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 20);
+            this.label3.Size = new System.Drawing.Size(24, 16);
             this.label3.TabIndex = 45;
             this.label3.Text = "By";
             // 
@@ -118,7 +120,7 @@
             this.textBox3.Location = new System.Drawing.Point(181, 114);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(310, 25);
+            this.textBox3.Size = new System.Drawing.Size(310, 21);
             this.textBox3.TabIndex = 44;
             // 
             // label4
@@ -127,7 +129,7 @@
             this.label4.Location = new System.Drawing.Point(13, 119);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 20);
+            this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 43;
             this.label4.Text = "Postnr";
             // 
@@ -136,7 +138,7 @@
             this.textBox4.Location = new System.Drawing.Point(181, 150);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(310, 25);
+            this.textBox4.Size = new System.Drawing.Size(310, 21);
             this.textBox4.TabIndex = 42;
             // 
             // label2
@@ -145,7 +147,7 @@
             this.label2.Location = new System.Drawing.Point(13, 85);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 41;
             this.label2.Text = "Addresse";
             // 
@@ -154,7 +156,7 @@
             this.textBox2.Location = new System.Drawing.Point(181, 80);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(310, 25);
+            this.textBox2.Size = new System.Drawing.Size(310, 21);
             this.textBox2.TabIndex = 40;
             // 
             // label1
@@ -163,7 +165,7 @@
             this.label1.Location = new System.Drawing.Point(13, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 39;
             this.label1.Text = "Navn";
             // 
@@ -172,7 +174,7 @@
             this.textBox1.Location = new System.Drawing.Point(181, 45);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 25);
+            this.textBox1.Size = new System.Drawing.Size(310, 21);
             this.textBox1.TabIndex = 38;
             // 
             // textBox7
@@ -180,7 +182,7 @@
             this.textBox7.Location = new System.Drawing.Point(181, 253);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(310, 25);
+            this.textBox7.Size = new System.Drawing.Size(310, 21);
             this.textBox7.TabIndex = 54;
             // 
             // label9
@@ -189,15 +191,35 @@
             this.label9.Location = new System.Drawing.Point(13, 290);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 20);
+            this.label9.Size = new System.Drawing.Size(60, 16);
             this.label9.TabIndex = 55;
             this.label9.Text = "KundeNr";
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(181, 183);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(310, 21);
+            this.textBox5.TabIndex = 56;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 188);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 16);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "MedarbejderNr";
+            // 
             // OpretKunde
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 442);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label7);
@@ -216,7 +238,7 @@
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.Name = "OpretKunde";
-            this.Text = "Form1";
+            this.Text = "OpretKunde";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +262,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label5;
     }
 }

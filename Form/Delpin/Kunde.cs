@@ -22,14 +22,15 @@ namespace Delpin
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
 
-            listView1.Columns.Add("Navn", 60);
-            listView1.Columns.Add("Adresse", 60);
-            listView1.Columns.Add("PostNr", 60);
-            listView1.Columns.Add("By", 60);
-            listView1.Columns.Add("DebitorNr", 60);
-            listView1.Columns.Add("KundeType", 60);
-            listView1.Columns.Add("TLF", 60);
-            listView1.Columns.Add("KundeNr", 60);
+            listView1.Columns.Add("Navn", 70);
+            listView1.Columns.Add("Adresse", 70);
+            listView1.Columns.Add("PostNr", 70);
+            listView1.Columns.Add("By", 70);
+            listView1.Columns.Add("MedarbejderNr", 70);
+            listView1.Columns.Add("DebitorNr", 70);
+            listView1.Columns.Add("KundeType", 70);
+            listView1.Columns.Add("TLF", 70);
+            listView1.Columns.Add("KundeNr", 70);
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -88,7 +89,9 @@ namespace Delpin
             DialogResult dialogResult = MessageBox.Show("Vil du slette kunden", "Sletning af kunde", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
-                controller.DeleteDebitor(listView1.SelectedItems[0].SubItems[6].Text);
+                controller.DeleteDebitor(textBox10.Text);
+                ClearTextBoxes();
+
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -96,8 +99,11 @@ namespace Delpin
             }
         }
 
+        
+
         private void button6_Click(object sender, EventArgs e)
-        {
+        {   /*TextBox5 is a ForeignKey and is ReadOnly to avoid conflict 
+              TextBox6 is a PrimaryKey with Identity Increment */
             controller.UpdatetDebitor(textBox1.Text,
                                       textBox2.Text,
                                       int.Parse(textBox3.Text),
@@ -105,39 +111,45 @@ namespace Delpin
                                       textBox5.Text,
                                       textBox6.Text,
                                       textBox7.Text,
-                                      textBox8.Text );
+                                      textBox8.Text,
+                                      textBox9.Text
+                                      );
+            ClearTextBoxes();
         }
-
         private void button2_Click(object sender, EventArgs e)//search
         {
-            /*Needs Error handling for when nothing is typed in textBox9*/
-            DebitorObj debitorObj = controller.HentDebitor(textBox9.Text);
+            /*Needs Error handling for when nothing is typed in textBox10*/
+            controller.HentDebitor(textBox10.Text);
+            DebitorObj debitorObj = controller.debitor[0];
 
-            string[] arr = new string[8];
+            textBox1.Text = debitorObj.Navn;
+            textBox2.Text = debitorObj.Adresse;
+            textBox3.Text = debitorObj.PostNr.ToString();
+            textBox4.Text = debitorObj.By;
+            textBox5.Text = debitorObj.MedarbejderNr;
+            textBox6.Text = debitorObj.DebitorNr;
+            textBox7.Text = debitorObj.KundeType;
+            textBox8.Text = debitorObj.Tlf;
+            textBox9.Text = debitorObj.KundeNr;
+            controller.debitor.Clear();
             
-                arr[0] = debitorObj.Navn;
-                arr[1] = debitorObj.Adresse;
-                arr[2] = debitorObj.PostNr.ToString();
-                arr[3] = debitorObj.By;
-                arr[4] = debitorObj.DebitorNr;
-                arr[5] = debitorObj.KundeType;
-                arr[6] = debitorObj.Tlf;
-                arr[7] = debitorObj.KundeNr;
 
-            ListViewItem itm = new ListViewItem(arr);
-                listView1.Items.Add(itm);
+            Console.WriteLine(debitorObj.DebitorNr);
+                
+                
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ClearTextBoxes()
         {
-            textBox1.Text = listView1.SelectedItems[0].SubItems[0].Text;
-            textBox2.Text = listView1.SelectedItems[0].SubItems[1].Text;
-            textBox3.Text = listView1.SelectedItems[0].SubItems[2].Text;
-            textBox4.Text = listView1.SelectedItems[0].SubItems[3].Text;
-            textBox5.Text = listView1.SelectedItems[0].SubItems[4].Text;
-            textBox6.Text = listView1.SelectedItems[0].SubItems[5].Text;
-            textBox7.Text = listView1.SelectedItems[0].SubItems[6].Text;
-            textBox8.Text = listView1.SelectedItems[0].SubItems[7].Text;
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+            textBox9.Clear();
         }
+
     }
 }

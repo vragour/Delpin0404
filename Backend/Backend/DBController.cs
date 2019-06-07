@@ -38,15 +38,15 @@ namespace Backend
 
         }
 
-        public void InsertDebitor(string navn, string adresse, int postNr, string by, string kundeType, string tlf, string kundeNr)
+        public void InsertDebitor(string navn, string adresse, int postNr, string by, string medarbejderNr, string kundeType, string tlf, string kundeNr)
         {
-            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, kundeType, tlf, kundeNr);
-            connection.InserDebitor(debitorObj);
+            DebitorObj debitorInsertObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, kundeType, tlf, kundeNr);
+            connection.InserDebitor(debitorInsertObj);
         }
 
-        public void UpdatetDebitor(string navn, string adresse, int postNr, string by, string debitorNr, string kundeType, string tlf, string kundeNr)
+        public void UpdatetDebitor(string navn, string adresse, int postNr, string by,string medarbejderNr, string debitorNr, string kundeType, string tlf, string kundeNr)
         {
-            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, debitorNr, kundeType, tlf, kundeNr);
+            DebitorObj debitorObj = new DebitorObj(navn, adresse, postNr, by, medarbejderNr, debitorNr, kundeType, tlf, kundeNr);
             connection.UpdateDebitor(debitorObj);
         }
 
@@ -55,10 +55,10 @@ namespace Backend
             connection.DeleteDebitor(debitorTlf);
         }
 
-        public DebitorObj HentDebitor(string debitorTlf)
+        public void HentDebitor(string debitorTlf)
         {
-            DebitorObj debitor = connection.FindDebitor(debitorTlf);
-            return debitor;
+            DebitorObj debitorObj = connection.FindDebitor(debitorTlf);
+            debitor.Add(debitorObj);
         }
 
         public void FindFrieRessourcerMaerkelNavn(string startdate, string slutdate, string search)
