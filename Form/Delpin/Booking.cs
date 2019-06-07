@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Backend;
 namespace Delpin
 {
-    public partial class Booking : Form
+    public partial class Booking : Form//Holger
     {
         public Booking()
         {

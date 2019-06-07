@@ -11,7 +11,7 @@ using Backend;
 
 namespace Delpin
 {
-    public partial class updateRes : Form
+    public partial class updateRes : Form//Holger
     {
         
         public updateRes()

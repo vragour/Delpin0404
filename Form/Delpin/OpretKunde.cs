@@ -6,7 +6,7 @@ namespace Delpin
 {
     public partial class OpretKunde : Form
     {
-        DBController dbc = new DBController();
+        DBController dbc = new DBController();//Michael
         public OpretKunde()
         {
             InitializeComponent();

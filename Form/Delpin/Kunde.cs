@@ -12,7 +12,7 @@ namespace Delpin
 {
     public partial class Kunde : Form
     {
-        DBController controller = new DBController();
+        DBController controller = new DBController();//Michael
         
         public Kunde()
         {
