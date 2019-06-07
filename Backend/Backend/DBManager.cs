@@ -385,30 +385,40 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
         }
 
-        //public void UpdateReserveringlinjeTilbehoer(string orderstart, string orderslut, double total, int tnr, int book_ID) {
-
-        //    conn.Open();
-        //    SqlCommand com = new SqlCommand();
-        //    com.Connection = conn;
-
-        //    //string navn, int rnr, int aagang, string maerke, double pris, int anr
-
-        //    string sql = "update v2_Ressourcer " +
-        //                "set" +
-        //                    " Navn = " + Navn +
-        //                    " Aagang = " + Aargang +
-        //                    " Maerke = " + Maerke +
-        //                    " Pris = " + Pris +
-        //                    " anr = " + anr +
-        //                " Where rnr =" + rnr;
-
-        //    com.CommandText = sql;
-        //    com.ExecuteNonQuery();
-        //    conn.Close();
+        public void UpdateReserveringlinjeTilbehoer(string ResNr, string orderstart, string orderslut, double total, int tnr, int book_ID)
+        {
+            string sql = "update v2_Reservering_linje_Tilbehoer " +
+            "set" +
+                " OrderStart = " + orderstart +
+                " Orderslut = " + orderslut +
+                " Total = " + total +
+                " tnr = " + tnr +
+                " Book_ID = " + book_ID +
+            " Where ResNr =" + ResNr;
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            com.CommandText = sql;
+            com.ExecuteNonQuery();
+            conn.Close();
 
 
-        //}
-        public void UpdateReserveringlinjeRessourcer(string orderstart, string orderslut, double total, int rnr, int book_ID) {
+        }
+        public void UpdateReserveringlinjeRessourcer(string ResNr, string orderstart, string orderslut, double total, int rnr, int book_ID) {
+                string sql = "update v2_Reservering_linje_Ressourcer " +
+                            "set" +
+                            " OrderStart = " + orderstart +
+                            " Orderslut = " + orderslut +
+                            " Total = " + total +
+                            " tnr = " + rnr +
+                            " Book_ID = " + book_ID +
+                            " Where ResNr =" + ResNr;
+            conn.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            com.CommandText = sql;
+            com.ExecuteNonQuery();
+            conn.Close();
 
 
         }

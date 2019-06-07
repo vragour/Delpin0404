@@ -93,7 +93,12 @@ namespace Backend
             tilbehoer = connection.FindFrietilbehoerMaerkelNavn(startdate, slutdate, search);
         }
 
-        
+        public void UpdateReserveringlinjeTilbehoer(string ResNr, string orderstart, string orderslut, double total, int tnr, int book_ID)
+        { }
 
+        public void SletReserveringlinjeRessourcer(int Resnr)
+        { }
+
+        
     }
 }
