@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Backend
-{
+{//Michael
    public class DebitorRessBookObj
     {
         private int resNr;

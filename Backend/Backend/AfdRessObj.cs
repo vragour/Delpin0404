@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    public class AfdRessObj
+    public class AfdRessObj//Michael
     {
         private string name;
         private int resNr;

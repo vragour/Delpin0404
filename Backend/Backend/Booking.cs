@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    public class Booking
+    public class Booking//Holger
     {
         private int _Dnr;
         private int _Book_ID;

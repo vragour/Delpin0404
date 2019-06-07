@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    public class Afdeling
+    public class Afdeling//Holger
     {
         int _Anr;
         string _Adresse;

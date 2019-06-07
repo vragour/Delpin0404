@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    public class TilbehoerObj
+    public class TilbehoerObj//Holger
     {
         private string Navn;
         private int Tnr;

@@ -60,7 +60,7 @@ namespace Backend
             return ressources;
         }
         
-        public List<DebitorRessBookObj> FindDebitorRessourceBookinger(int debitorID)
+        public List<DebitorRessBookObj> FindDebitorRessourceBookinger(int debitorID)//Michael
         {
             List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
             string sqlCmdText = "select * from v2_Booking " +
@@ -132,7 +132,7 @@ namespace Backend
 
 
 
-        public void InserDebitor(DebitorObj debitorObj)
+        public void InserDebitor(DebitorObj debitorObj)//Michael
         {
             string sqlCmdText = $"insert into v2_Debitor ( Navn, Adresse, Postnr, [By], manr, Kundetype, TLF, Kundenr) " +
             $"values ('{debitorObj.Navn}'," +
@@ -154,7 +154,7 @@ namespace Backend
         /*insert into v2_Debitor(Navn, Adresse, PostNr, [By], KundeType, TLF, Kundenr)
 values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
 
-        public DebitorObj FindDebitor(string debitorTlf)
+        public DebitorObj FindDebitor(string debitorTlf)//Michael
         {
             /* DebitorObj is assigned null and will remain null
              * unless an occurrence,@param debitorTlf ,is found in the database.*/
@@ -185,7 +185,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             return debitorObj;
         }
 
-        public void UpdateDebitor(DebitorObj debitorObj)
+        public void UpdateDebitor(DebitorObj debitorObj)//Michael
         {
             string sqlCmdText = $"Update v2_Debitor set " +
                 $" Navn='{debitorObj.Navn}'," +
@@ -205,7 +205,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             comm.Connection.Close();
         }
 
-        public void DeleteDebitor(string debitorTlf)
+        public void DeleteDebitor(string debitorTlf)//Michael
         {
             string sqlCmdText = $"Delete from v2_Debitor " +
                                   $" where Tlf = '{debitorTlf}'";
@@ -215,7 +215,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             comm.Connection.Close();
         }
 
-        public void updateRessource(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)
+        public void updateRessource(string Navn, int rnr, int Aargang, string Maerke, int Pris, int anr)//Holger
         {
             conn.Open();
             SqlCommand com = new SqlCommand();
@@ -237,7 +237,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
         }
 
-        public void deleteReservering(int rnr)
+        public void deleteReservering(int rnr)//Holger
         {
             conn.Open();
             SqlCommand com = new SqlCommand();
@@ -252,7 +252,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
         }
 
-        public List<AfdRessObj> HentLedigeResourcerForAfdeling()
+        public List<AfdRessObj> HentLedigeResourcerForAfdeling()//Michael
         {
             List<AfdRessObj> ressources = new List<AfdRessObj>();
             string sqlCmdText = "select r.Navn, r.rnr, r.Maerke, r.Pris, a.Adresse, a.Postnr " +
@@ -282,7 +282,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             return ressources;
         }
 
-        public List<Ressource> FindFrieRessourcerMaerkelNavn(string startdate, string slutdate, string search)
+        public List<Ressource> FindFrieRessourcerMaerkelNavn(string startdate, string slutdate, string search)//Holger
         {
 
             conn.Open();
@@ -318,7 +318,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             return ressources;
         }
 
-        public List<Ressource> HentRessourcerPaaRnr(string startdate, string slutdate, string rnr)
+        public List<Ressource> HentRessourcerPaaRnr(string startdate, string slutdate, string rnr)//Holger
         {
 
             conn.Open();
@@ -349,7 +349,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
         }
 
 
-        public void insertBooking(int dnr)
+        public void insertBooking(int dnr)//Holger
         {
 
             conn.Open();
@@ -364,7 +364,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
 
         }
 
-        public void insertReserveringsline(string orderstart, string orderslut, double pris, int rnr, int bookid)
+        public void insertReserveringsline(string orderstart, string orderslut, double pris, int rnr, int bookid)//Holger
         {
 
             conn.Open();
@@ -378,7 +378,8 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
         }
 
-        public List<Booking> hentsidsteBooking(){
+        public List<Booking> hentsidsteBooking()//Holger
+        {
             conn.Open();
             SqlCommand com = new SqlCommand();
             com.Connection = conn;
@@ -397,7 +398,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             return booking;
         }
 
-        public List<TilbehoerObj> FindFrietilbehoerMaerkelNavn(string startdate, string slutdate, string search)
+        public List<TilbehoerObj> FindFrietilbehoerMaerkelNavn(string startdate, string slutdate, string search)//Holger
         {
 
             conn.Open();
@@ -434,7 +435,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             return tilbehoerObjs;
         }
 
-        public void SletReserveringlinjeRessourcer(int Resnr)
+        public void SletReserveringlinjeRessourcer(int Resnr)//Holger
         {
             conn.Open();
             SqlCommand com = new SqlCommand();
@@ -447,7 +448,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
         }
 
-        public void SletReserveringlinjeTilbehoer(int Resnr)
+        public void SletReserveringlinjeTilbehoer(int Resnr)//Holger
         {
             conn.Open();
             SqlCommand com = new SqlCommand();
@@ -459,7 +460,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
             conn.Close();
         }
 
-        public void UpdateReserveringlinjeTilbehoer(int ResNr, string orderstart, string orderslut, double total)
+        public void UpdateReserveringlinjeTilbehoer(int ResNr, string orderstart, string orderslut, double total)//Holger
         {
             string sql = "update v2_Reservering_linje_Tilbehoer " +
             "set" +
@@ -476,7 +477,7 @@ values('Jens Holger', 'KoldingVej',7545, 'Vejle', 'P', '75412356', 'KO4575')*/
 
 
         }
-        public void UpdateReserveringlinjeRessourcer(int ResNr, string orderstart, string orderslut, double total) {
+        public void UpdateReserveringlinjeRessourcer(int ResNr, string orderstart, string orderslut, double total) {//Holger
                 string sql = "update v2_Reservering_linje_Ressourcer " +
                             "set" +
                             " OrderStart = " + orderstart +

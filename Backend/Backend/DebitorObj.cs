@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 
 namespace Backend
-{
+{//Michael
     public class DebitorObj
     {
         private string navn;
