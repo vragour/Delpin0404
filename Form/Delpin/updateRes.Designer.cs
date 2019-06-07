@@ -33,16 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.ResNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Navn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rnr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,6 +42,15 @@
             this.pris = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Startdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Slutdato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,59 @@
             this.groupBox2.UseWaitCursor = true;
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ResNr,
+            this.Navn,
+            this.rnr,
+            this.aargang,
+            this.maerke,
+            this.pris,
+            this.Startdato,
+            this.Slutdato});
+            this.listView1.Location = new System.Drawing.Point(0, 23);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(665, 398);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.UseWaitCursor = true;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
+            // 
+            // ResNr
+            // 
+            this.ResNr.Text = "ResNr";
+            // 
+            // Navn
+            // 
+            this.Navn.Text = "Navn";
+            // 
+            // rnr
+            // 
+            this.rnr.Text = "rnr";
+            // 
+            // aargang
+            // 
+            this.aargang.Text = "Årgang";
+            // 
+            // maerke
+            // 
+            this.maerke.Text = "Mærke";
+            // 
+            // pris
+            // 
+            this.pris.Text = "pris";
+            // 
+            // Startdato
+            // 
+            this.Startdato.Text = "Startdato";
+            // 
+            // Slutdato
+            // 
+            this.Slutdato.Text = "Slutdato";
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(80, 105);
@@ -136,25 +189,6 @@
             this.textBox7.TabIndex = 7;
             this.textBox7.UseWaitCursor = true;
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ResNr,
-            this.Navn,
-            this.rnr,
-            this.aargang,
-            this.maerke,
-            this.pris,
-            this.Startdato,
-            this.Slutdato});
-            this.listView1.Location = new System.Drawing.Point(0, 23);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(665, 398);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -163,6 +197,7 @@
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Startdato";
+            this.label2.UseWaitCursor = true;
             this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label3
@@ -172,6 +207,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 9;
+            this.label3.UseWaitCursor = true;
             this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label4
@@ -182,6 +218,7 @@
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Slutdato";
+            this.label4.UseWaitCursor = true;
             this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // label5
@@ -192,6 +229,7 @@
             this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "pris";
+            this.label5.UseWaitCursor = true;
             this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // button2
@@ -202,6 +240,8 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Updater";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseWaitCursor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -211,34 +251,8 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "Slet ";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // ResNr
-            // 
-            this.ResNr.Text = "ResNr";
-            // 
-            // Navn
-            // 
-            this.Navn.Text = "Navn";
-            // 
-            // aargang
-            // 
-            this.aargang.Text = "Årgang";
-            // 
-            // maerke
-            // 
-            this.maerke.Text = "Mærke";
-            // 
-            // pris
-            // 
-            this.pris.Text = "pris";
-            // 
-            // Startdato
-            // 
-            this.Startdato.Text = "Startdato";
-            // 
-            // Slutdato
-            // 
-            this.Slutdato.Text = "Slutdato";
+            this.button3.UseWaitCursor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // updateRes
             // 

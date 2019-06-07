@@ -183,7 +183,12 @@ namespace Delpin
                     bookingId);
                 
             }
+            
+
             listView4.Items.Clear();
+            MessageBox.Show("Booking er lavet");
+
+
 
         }
 
