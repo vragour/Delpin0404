@@ -60,7 +60,7 @@ namespace Backend
             return ressources;
         }
         
-        public List<DebitorRessBookObj> FindDebitorRessourceBookinger(string debitorID)
+        public List<DebitorRessBookObj> FindDebitorRessourceBookinger(int debitorID)
         {
             List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
             string sqlCmdText = "select * from v2_Booking " +
@@ -94,7 +94,7 @@ namespace Backend
             return ressBookList;
         }
 
-        public List<DebitorRessBookObj> FindRessourceBookinger(string Book_ID)
+        public List<DebitorRessBookObj> FindRessourceBookinger(int Book_ID)
         {
             List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
             string sqlCmdText = "select* from v2_Booking " +

@@ -28,7 +28,7 @@ namespace Backend
             afdRessObjs = connection.HentLedigeResourcerForAfdeling();
         }
 
-        public void FindDebitorRessourceBookinger(string debitorID)
+        public void FindDebitorRessourceBookinger(int debitorID)
         {
             /*Populate the List with Database Elements and let the controller keep the list*/
             ressBookList = connection.FindDebitorRessourceBookinger(debitorID);
@@ -111,7 +111,10 @@ namespace Backend
         public void SletReserveringlinjeRessourcer(int Resnr)
         { connection.SletReserveringlinjeRessourcer(Resnr); }
 
-        
-        
+        public void FindRessourceBookinger(int Book_ID)
+        {
+            ressBookList = connection.FindRessourceBookinger(Book_ID);
+        }
+
     }
 }
