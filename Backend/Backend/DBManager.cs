@@ -66,7 +66,8 @@ namespace Backend
             string sqlCmdText = "select * from v2_Booking " +
                          " join v2_Reservation_Line_Ressourcer" +
                          " on v2_Reservation_Line_Ressourcer.Book_ID = v2_Booking.Book_ID" +
-                         " join v2_Ressourcer"+ "on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
+                         " join v2_Ressourcer " +
+                         " on v2_Reservation_Line_Ressourcer.rnr = v2_Ressourcer.rnr" +
                          " where v2_Booking.dnr = " + debitorID;
 
             SqlCommand comm = new SqlCommand(sqlCmdText, conn);
@@ -81,8 +82,8 @@ namespace Backend
                           Convert.ToInt32(reader["Book_ID"]),
                           Convert.ToString(reader["Navn"]),
                           Convert.ToString(reader["Maerke"]),
-                          Convert.ToString(reader["OrdreStart"]),
-                          Convert.ToString(reader["Ordreslut"]),
+                          Convert.ToString(reader["OrderStart"]),
+                          Convert.ToString(reader["Orderslut"]),
                           Convert.ToInt32(reader["Pris"]),
                           Convert.ToInt32(reader["Aargang"])
                           ));

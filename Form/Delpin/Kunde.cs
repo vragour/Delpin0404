@@ -149,12 +149,23 @@ namespace Delpin
 
         private void TextBox6_TextChanged(object sender, EventArgs e)
         {
-            controller.FindDebitorRessourceBookinger(textBox6.Text);
+            controller.FindDebitorRessourceBookinger(int.Parse(textBox6.Text));
 
             string[] strArr = new string[9];
+            ListViewItem itm = new ListViewItem();
 
             for (int i = 0; i <= controller.ressBookList.Count; i++) {
-
+                strArr[0] = controller.ressBookList[i].ResNr.ToString();
+                strArr[1] = controller.ressBookList[i].Rnr.ToString();
+                strArr[2] = controller.ressBookList[i].BookingID.ToString();
+                strArr[3] = controller.ressBookList[i].Navn.ToString();
+                strArr[4] = controller.ressBookList[i].Maerke.ToString();
+                strArr[5] = controller.ressBookList[i].StartDato.ToString();
+                strArr[6] = controller.ressBookList[i].SlutDato.ToString();
+                strArr[7] = controller.ressBookList[i].Pris.ToString();
+                strArr[8] = controller.ressBookList[i].Aargang.ToString();
+                itm = new ListViewItem(strArr);
+                listView1.Items.Add(itm);
             }
         }
     }
