@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 namespace Backend
-{
+{/*Daniel har skret det meste bortset fra UpdaterReservationRessourcer*/
     public class Ressource
     {
         private string _Navn;
@@ -149,7 +149,9 @@ namespace Backend
 
             conn.Close();
         }
-
+        
+        /*
+         Aynur*/
         public static void UpdaterReservationRessourcer() //update
         {
 
