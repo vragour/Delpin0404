@@ -16,7 +16,7 @@ namespace Backend
         public List<Booking> bookings = new List<Booking>();
         public List<resserversline> resline = new List<resserversline>();
         public List<TilbehoerObj> tilbehoer = new List<TilbehoerObj>();
-        public List<DebitorRessBookObj> ressBookList = new List<DebitorRessBookObj>();
+        public List<DebitorRessBookObj> ressBookList;
         public void HentAllFrieRessourcer(string startdate, string slutdate, string whereString = null)
         {
             ressources = connection.FindAlleFrieRessourcer(startdate, slutdate, whereString);

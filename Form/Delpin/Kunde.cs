@@ -115,10 +115,13 @@ namespace Delpin
                                       textBox9.Text
                                       );
             ClearTextBoxes();
+            listView1.Items.Clear();
+            
         }
         private void button2_Click(object sender, EventArgs e)//search
         {
             /*Needs Error handling for when nothing is typed in textBox10*/
+            
             controller.HentDebitor(textBox10.Text);
             DebitorObj debitorObj = controller.debitor[0];
 
@@ -132,7 +135,28 @@ namespace Delpin
             textBox8.Text = debitorObj.Tlf;
             textBox9.Text = debitorObj.KundeNr;
             controller.debitor.Clear();
-                
+
+            controller.FindDebitorRessourceBookinger(int.Parse(textBox6.Text));
+
+            string[] strArr = new string[9];
+            ListViewItem itm = new ListViewItem();
+
+            foreach (DebitorRessBookObj obj in controller.ressBookList)
+            {
+                strArr[0] = obj.ResNr.ToString();
+                strArr[1] = obj.Rnr.ToString();
+                strArr[2] = obj.BookingID.ToString();
+                strArr[3] = obj.Navn.ToString();
+                strArr[4] = obj.Maerke.ToString();
+                strArr[5] = obj.StartDato.ToString();
+                strArr[6] = obj.SlutDato.ToString();
+                strArr[7] = obj.Pris.ToString();
+                strArr[8] = obj.Aargang.ToString();
+                itm = new ListViewItem(strArr);
+                listView1.Items.Add(itm);
+            }
+            controller.ressBookList.Clear();
+
         }
         private void ClearTextBoxes()
         {
@@ -149,24 +173,7 @@ namespace Delpin
 
         private void TextBox6_TextChanged(object sender, EventArgs e)
         {
-            controller.FindDebitorRessourceBookinger(int.Parse(textBox6.Text));
-
-            string[] strArr = new string[9];
-            ListViewItem itm = new ListViewItem();
-
-            foreach(DebitorRessBookObj obj in controller.ressBookList) {
-                strArr[0] = obj.ResNr.ToString();
-                strArr[1] = obj.Rnr.ToString();
-                strArr[2] = obj.BookingID.ToString();
-                strArr[3] = obj.Navn.ToString();
-                strArr[4] = obj.Maerke.ToString();
-                strArr[5] = obj.StartDato.ToString();
-                strArr[6] = obj.SlutDato.ToString();
-                strArr[7] = obj.Pris.ToString();
-                strArr[8] = obj.Aargang.ToString();
-                itm = new ListViewItem(strArr);
-                listView1.Items.Add(itm);
-            }
+            
         }
     }
 }
